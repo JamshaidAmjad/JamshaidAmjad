@@ -2,17 +2,21 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=300&size=13&duration=3000&pause=1000&color=6E7681&center=true&vCenter=true&width=400&lines=Full+Stack+Engineer+%C2%B7+AI+Engineer+%C2%B7+Builder" alt="role"/>
+<sup>FULL STACK ENGINEER &nbsp;·&nbsp; AI ENGINEER &nbsp;·&nbsp; BUILDER</sup>
 
 <br/>
 
 # Jamshaid Amjad
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=400&size=16&duration=2500&pause=800&color=58A6FF&center=true&vCenter=true&width=560&lines=Building+intelligent+web+experiences;Turning+complex+problems+into+clean+solutions;Full+stack+%E2%86%92+AI+%E2%86%92+Cloud+%E2%86%92+Production" alt="typing"/>
+<br/>
 
-<br/><br/>
+> *Building intelligent web experiences — from pixel-perfect UI to production AI systems.*
 
-<img src="https://komarev.com/ghpvc/?username=JamshaidAmjad&style=flat&color=58a6ff&label=profile+views&labelColor=161b22"/>
+<br/>
+
+<img src="https://komarev.com/ghpvc/?username=JamshaidAmjad&style=flat&color=ffffff&label=profile+views&labelColor=000000"/>
+&nbsp;
+<img src="https://img.shields.io/github/followers/JamshaidAmjad?style=flat&color=ffffff&label=followers&labelColor=000000"/>
 
 </div>
 
@@ -22,11 +26,9 @@
 
 <br/>
 
-<!-- ─────────────────── ABOUT ─────────────────── -->
-
 ### About
 
-Engineer focused on the full spectrum — from pixel-perfect interfaces to production-grade AI systems. I care deeply about code quality, developer experience, and shipping things that actually work.
+Engineer focused on the full spectrum — from pixel-perfect interfaces to production-grade AI systems. I care about code quality, developer experience, and shipping things that actually work.
 
 Currently building with **Next.js**, **Python**, and **LLMs**. Always learning. Always shipping.
 
@@ -71,15 +73,15 @@ Currently building with **Next.js**, **Python**, and **LLMs**. Always learning. 
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=JamshaidAmjad&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=8b949e&count_private=true&include_all_commits=true&hide_title=true&rank_icon=github&card_width=480"/>
+<img src="https://github-readme-stats.vercel.app/api?username=JamshaidAmjad&show_icons=true&hide_border=true&bg_color=000000&title_color=ffffff&icon_color=ffffff&text_color=888888&count_private=true&include_all_commits=true&hide_title=true&rank_icon=github&card_width=460"/>
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JamshaidAmjad&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e&layout=compact&langs_count=6&hide_title=true&card_width=480"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JamshaidAmjad&hide_border=true&bg_color=000000&title_color=ffffff&text_color=888888&layout=compact&langs_count=6&hide_title=true&card_width=460"/>
 
 <br/><br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=JamshaidAmjad&hide_border=true&background=0d1117&stroke=21262d&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=8b949e&dates=6e7681&currStreakNum=c9d1d9&sideNums=c9d1d9&card_width=480"/>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=JamshaidAmjad&hide_border=true&background=000000&stroke=333333&ring=ffffff&fire=ffffff&currStreakLabel=ffffff&sideLabels=888888&dates=555555&currStreakNum=ffffff&sideNums=ffffff"/>
 
 </div>
 
@@ -93,7 +95,7 @@ Currently building with **Next.js**, **Python**, and **LLMs**. Always learning. 
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=JamshaidAmjad&hide_border=true&bg_color=0d1117&color=58a6ff&line=21262d&point=58a6ff&area=true&area_color=58a6ff" width="100%"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=JamshaidAmjad&hide_border=true&bg_color=000000&color=ffffff&line=333333&point=ffffff&area=true&area_color=ffffff" width="100%"/>
 
 </div>
 
@@ -126,15 +128,15 @@ Currently building with **Next.js**, **Python**, and **LLMs**. Always learning. 
 <div align="center">
 
 <a href="https://www.linkedin.com/in/jamshaid-amjad">
-  <img src="https://img.shields.io/badge/LinkedIn-0d1117?style=flat&logo=linkedin&logoColor=58a6ff&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/LinkedIn-000000?style=flat&logo=linkedin&logoColor=ffffff&labelColor=000000"/>
 </a>
 &nbsp;
 <a href="mailto:amjadjamshad99884@gmail.com">
-  <img src="https://img.shields.io/badge/Email-0d1117?style=flat&logo=gmail&logoColor=58a6ff&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/Email-000000?style=flat&logo=gmail&logoColor=ffffff&labelColor=000000"/>
 </a>
 &nbsp;
 <a href="https://github.com/JamshaidAmjad">
-  <img src="https://img.shields.io/badge/GitHub-0d1117?style=flat&logo=github&logoColor=58a6ff&labelColor=0d1117"/>
+  <img src="https://img.shields.io/badge/GitHub-000000?style=flat&logo=github&logoColor=ffffff&labelColor=000000"/>
 </a>
 
 <br/><br/>
