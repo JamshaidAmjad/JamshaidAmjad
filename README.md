@@ -2,23 +2,17 @@
 
 <br/>
 
-<!-- ─────────────────── MINIMAL HEADER ─────────────────── -->
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:0d1117&height=2&section=header" width="100%"/>
-
-<br/><br/>
-
 <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=300&size=13&duration=3000&pause=1000&color=6E7681&center=true&vCenter=true&width=400&lines=Full+Stack+Engineer+%C2%B7+AI+Engineer+%C2%B7+Builder" alt="role"/>
 
 <br/>
 
 # Jamshaid Amjad
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=400&size=16&duration=2500&pause=800&color=58A6FF&center=true&vCenter=true&multiline=false&width=600&lines=Building+intelligent+web+experiences;Turning+complex+problems+into+elegant+solutions;Full+stack+%E2%86%92+AI+%E2%86%92+Cloud+%E2%86%92+Production" alt="typing"/>
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=400&size=16&duration=2500&pause=800&color=58A6FF&center=true&vCenter=true&width=560&lines=Building+intelligent+web+experiences;Turning+complex+problems+into+clean+solutions;Full+stack+%E2%86%92+AI+%E2%86%92+Cloud+%E2%86%92+Production" alt="typing"/>
 
 <br/><br/>
 
-<img src="https://komarev.com/ghpvc/?username=JamshaidAmjad&style=flat&color=58a6ff&label=profile+views&labelColor=161b22" />
+<img src="https://komarev.com/ghpvc/?username=JamshaidAmjad&style=flat&color=58a6ff&label=profile+views&labelColor=161b22"/>
 
 </div>
 
@@ -30,10 +24,6 @@
 
 <!-- ─────────────────── ABOUT ─────────────────── -->
 
-<table border="0" align="center">
-<tr>
-<td width="55%" valign="top">
-
 ### About
 
 Engineer focused on the full spectrum — from pixel-perfect interfaces to production-grade AI systems. I care deeply about code quality, developer experience, and shipping things that actually work.
@@ -44,23 +34,6 @@ Currently building with **Next.js**, **Python**, and **LLMs**. Always learning. 
 - 🔭 &nbsp; AI-powered web applications
 - 🌱 &nbsp; LLM fine-tuning, RAG, edge deployments
 - 💬 &nbsp; Open to collaborations and remote work
-
-</td>
-<td width="5%"></td>
-<td width="40%" valign="top">
-
-### Quick Stats
-
-```
-Commits this year  ████████████  1,200+
-Open source PRs    ████████░░░░    200+
-Repositories       ██████░░░░░░     50+
-Stack depth        ████████████  Full
-```
-
-</td>
-</tr>
-</table>
 
 <br/>
 
@@ -76,7 +49,11 @@ Stack depth        ████████████  Full
 
 <br/>
 
-<img src="https://skillicons.dev/icons?i=ts,react,nextjs,tailwind,nodejs,python,fastapi,postgres,redis,docker,aws,vercel&theme=dark&perline=12"/>
+<img src="https://skillicons.dev/icons?i=ts,react,nextjs,tailwind,nodejs,python&theme=dark&perline=6"/>
+
+<br/><br/>
+
+<img src="https://skillicons.dev/icons?i=fastapi,postgres,redis,docker,aws,vercel&theme=dark&perline=6"/>
 
 </div>
 
@@ -94,13 +71,15 @@ Stack depth        ████████████  Full
 
 <br/>
 
-<img height="160" src="https://github-readme-stats.vercel.app/api?username=JamshaidAmjad&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=8b949e&count_private=true&include_all_commits=true&hide_title=true&rank_icon=github"/>
-&nbsp;&nbsp;
-<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JamshaidAmjad&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e&layout=compact&langs_count=6&hide_title=true"/>
+<img src="https://github-readme-stats.vercel.app/api?username=JamshaidAmjad&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=8b949e&count_private=true&include_all_commits=true&hide_title=true&rank_icon=github&card_width=480"/>
 
 <br/><br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=JamshaidAmjad&hide_border=true&background=0d1117&stroke=21262d&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=8b949e&dates=6e7681&currStreakNum=c9d1d9&sideNums=c9d1d9"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JamshaidAmjad&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e&layout=compact&langs_count=6&hide_title=true&card_width=480"/>
+
+<br/><br/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=JamshaidAmjad&hide_border=true&background=0d1117&stroke=21262d&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=8b949e&dates=6e7681&currStreakNum=c9d1d9&sideNums=c9d1d9&card_width=480"/>
 
 </div>
 
