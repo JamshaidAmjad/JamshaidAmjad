@@ -1,0 +1,35 @@
+---
+title: "Training, Validation, and Testing in Machine Learning"
+description: "How to think about the three core data splits that help you build machine learning models responsibly."
+date: "2026-04-25"
+category: "AI Learning Notes"
+tags:
+  - machine learning
+  - validation
+  - testing
+related:
+  - neural-networks-explained-in-simple-language
+  - ai-in-healthcare-why-accuracy-is-not-enough
+seoTitle: "Training, Validation, and Testing in Machine Learning"
+seoDescription: "A simple explanation of training, validation, and testing splits in machine learning projects."
+keyTakeaways:
+  - Training data teaches the model.
+  - Validation data guides decisions during development.
+  - Test data estimates performance on unseen examples.
+---
+
+## Why data splits exist
+
+Machine learning models can look good during development and still fail in the real world. Data splits help reduce that risk.
+
+## The three roles
+
+Training data is what the model learns from. Validation data helps you compare model choices. Test data is held back until the end so you can estimate how the model performs on unseen data.
+
+- Do not tune your model directly on the test set.
+- Use validation results to make development decisions.
+- Treat the test result as a final check, not a playground.
+
+## The builder mindset
+
+Good evaluation is a product habit, not only a research habit. If an AI feature affects users, your evaluation setup should match the real use case as closely as possible.
