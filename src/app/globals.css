@@ -33,6 +33,88 @@ body {
   font-family: var(--font-display), Georgia, "Times New Roman", serif;
 }
 
+.article-body {
+  color: rgb(63 63 70);
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.dark .article-body {
+  color: rgb(212 212 216);
+}
+
+.article-body h2 {
+  margin: 2.75rem 0 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: rgb(9 9 11);
+}
+
+.article-body h3 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgb(9 9 11);
+}
+
+.dark .article-body h2,
+.dark .article-body h3 {
+  color: rgb(255 255 255);
+}
+
+.article-body p {
+  margin: 1.25rem 0;
+}
+
+.article-body ul {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.article-body li {
+  margin: 0.5rem 0;
+  line-height: 1.9;
+}
+
+.article-body li::marker {
+  color: rgb(161 161 170);
+}
+
+.article-body strong {
+  font-weight: 600;
+  color: rgb(9 9 11);
+}
+
+.dark .article-body strong {
+  color: rgb(255 255 255);
+}
+
+.article-body a {
+  color: rgb(9 9 11);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.dark .article-body a {
+  color: rgb(255 255 255);
+}
+
+.article-body code {
+  border-radius: 0.3rem;
+  background: rgb(228 228 231);
+  padding: 0.15rem 0.4rem;
+  font-size: 0.875em;
+}
+
+.dark .article-body code {
+  background: rgb(255 255 255 / 0.1);
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

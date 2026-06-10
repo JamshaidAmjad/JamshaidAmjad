@@ -26,7 +26,7 @@ export function BookingForm() {
   }
 
   return (
-    <form onSubmit={submit} className="grid gap-4 rounded-lg border border-zinc-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.03]">
+    <form onSubmit={submit} className="grid gap-4 rounded-2xl border border-zinc-200 bg-white p-7 dark:border-white/10 dark:bg-white/[0.03]">
       <div className="grid gap-4 sm:grid-cols-2">
         <input name="name" required placeholder="Name" className="form-input" />
         <input name="email" required type="email" placeholder="Email" className="form-input" />
@@ -38,7 +38,7 @@ export function BookingForm() {
       </select>
       <input name="timezone" placeholder="Timezone or country" className="form-input" />
       <textarea name="goals" required rows={6} placeholder="What do you want help with?" className="form-input" />
-      <button disabled={loading} className="min-h-12 rounded-md bg-zinc-950 px-5 text-sm font-semibold text-white disabled:opacity-60 dark:bg-white dark:text-zinc-950">
+      <button disabled={loading} className="min-h-12 rounded-md bg-zinc-950 px-5 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:opacity-60 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200">
         {loading ? "Sending..." : "Request booking"}
       </button>
       {status ? (

@@ -1,5 +1,6 @@
 import { ArticleBrowser } from "@/components/sections/article-browser";
 import { BlogLayout } from "@/components/sections/blog-layout";
+import { Accent } from "@/components/ui/accent";
 import { getAllArticles } from "@/lib/articles";
 import { createMetadata } from "@/lib/metadata";
 
@@ -13,8 +14,12 @@ export const metadata = createMetadata({
 export default function AiArticlesPage() {
   return (
     <BlogLayout
-      title="AI Articles and Learning Hub"
-      description="Polished starter notes for Applied AI learning, practical product thinking, and founder reflection."
+      title={
+        <>
+          Notes from my <Accent>AI journey</Accent>.
+        </>
+      }
+      description="I write as I learn — practical notes on Applied AI, product thinking, and founder reflection."
     >
       <ArticleBrowser articles={getAllArticles()} />
     </BlogLayout>

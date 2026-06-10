@@ -1,6 +1,8 @@
 import { NewsletterSignup } from "@/components/forms/newsletter-signup";
+import { Accent } from "@/components/ui/accent";
 import { Container } from "@/components/ui/container";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { PageHeader } from "@/components/ui/page-header";
+import { Reveal } from "@/components/ui/reveal";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
@@ -11,16 +13,21 @@ export const metadata = createMetadata({
 
 export default function NewsletterPage() {
   return (
-    <main className="py-16 sm:py-20">
-      <Container className="max-w-4xl">
-        <SectionHeading
-          eyebrow="Newsletter"
-          title="Follow the learning and building journey."
-          description="A practical newsletter for AI notes, software systems, founder thinking, Codexier updates, and Forare progress."
-        />
-        <div className="mt-10">
+    <main>
+      <PageHeader
+        align="center"
+        eyebrow="Newsletter"
+        title={
+          <>
+            Follow the <Accent>build notes</Accent>.
+          </>
+        }
+        description="Practical AI learning, software systems, founder thinking, Codexier updates, and Forare progress — straight to your inbox. No noise."
+      />
+      <Container className="max-w-3xl py-16 sm:py-20">
+        <Reveal>
           <NewsletterSignup />
-        </div>
+        </Reveal>
       </Container>
     </main>
   );

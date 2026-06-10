@@ -33,7 +33,7 @@ export function NewsletterSignup({ compact = false }: { compact?: boolean }) {
     <form
       onSubmit={submit}
       className={cn(
-        "rounded-lg border border-zinc-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.03]",
+        "rounded-2xl border border-zinc-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.03]",
         compact ? "grid gap-3" : "grid gap-4 md:grid-cols-[1fr_1fr_auto]",
       )}
     >
@@ -54,7 +54,7 @@ export function NewsletterSignup({ compact = false }: { compact?: boolean }) {
       <button
         type="submit"
         disabled={loading}
-        className="min-h-12 rounded-md bg-zinc-950 px-5 text-sm font-semibold text-white disabled:opacity-60 dark:bg-white dark:text-zinc-950"
+        className="min-h-12 rounded-md bg-zinc-950 px-5 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:opacity-60 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
       >
         {loading ? "Joining..." : "Join newsletter"}
       </button>

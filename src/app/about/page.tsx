@@ -1,6 +1,12 @@
+import { GraduationCap, MapPin, Terminal } from "lucide-react";
+import Image from "next/image";
+
+import { BookingCTA } from "@/components/sections/booking-cta";
 import { Timeline } from "@/components/sections/timeline";
+import { Accent } from "@/components/ui/accent";
 import { Container } from "@/components/ui/container";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { PageHeader } from "@/components/ui/page-header";
+import { Reveal } from "@/components/ui/reveal";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
@@ -31,26 +37,83 @@ const timeline = [
   },
 ];
 
+const facts = [
+  { icon: GraduationCap, label: "MSc Applied AI student" },
+  { icon: Terminal, label: "Founder of Codexier AB & Forare" },
+  { icon: MapPin, label: "Based in Sweden" },
+];
+
 export default function AboutPage() {
   return (
-    <main className="py-16 sm:py-20">
-      <Container>
-        <SectionHeading
-          eyebrow="About"
-          title="Jamshaid Amjad is turning AI learning into useful products, services, and public notes."
-          description="The brand connects three worlds: education, entrepreneurship, and practical software delivery."
-        />
-        <div className="mt-12 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-lg border border-zinc-200 bg-white p-6 dark:border-white/10 dark:bg-white/[0.03]">
-            <h2 className="text-2xl font-semibold text-zinc-950 dark:text-white">Founder/operator profile</h2>
-            <p className="mt-4 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
-              Jamshaid, also known as Jimzzz, is building around Applied AI, Codexier AB,
-              Forare, automation, and practical digital systems. This site is designed as a
-              complete funnel: people can learn, explore projects, book, subscribe, or make contact.
-            </p>
-          </div>
-          <Timeline items={timeline} />
+    <main>
+      <PageHeader
+        eyebrow="About me"
+        title={
+          <>
+            Turning AI learning into <Accent>useful things</Accent>.
+          </>
+        }
+        description="I connect three worlds — education, entrepreneurship, and practical software delivery — and document the journey in public."
+      />
+      <Container className="py-16 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+          <Reveal>
+            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white dark:border-white/10 dark:bg-white/[0.03]">
+              <div className="relative">
+                <Image
+                  src="/images/jamshaid-portrait.webp"
+                  alt="Portrait of Jamshaid Amjad"
+                  width={1024}
+                  height={1280}
+                  sizes="(min-width: 1024px) 28rem, 90vw"
+                  className="aspect-[4/3] w-full object-cover object-top"
+                />
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/30 via-transparent to-transparent"
+                />
+              </div>
+              <div className="p-7">
+                <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-white">
+                  Jamshaid Amjad <span className="text-zinc-400 dark:text-zinc-500">/ Jimzzz</span>
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+                  I&apos;m building around Applied AI, Codexier AB, Forare, automation, and
+                  practical digital systems. This site is my complete funnel: learn with me,
+                  explore my projects, book a session, subscribe, or just say hi.
+                </p>
+                <ul className="mt-5 space-y-3">
+                  {facts.map((fact) => (
+                    <li
+                      key={fact.label}
+                      className="flex items-center gap-3 text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                    >
+                      <span className="grid size-8 place-items-center rounded-lg bg-zinc-950 text-white dark:bg-white dark:text-zinc-950">
+                        <fact.icon className="size-4" strokeWidth={1.8} />
+                      </span>
+                      {fact.label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <div>
+              <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+                The journey
+              </h2>
+              <div className="mt-6">
+                <Timeline items={timeline} />
+              </div>
+            </div>
+          </Reveal>
         </div>
+      </Container>
+      <Container className="pb-20 sm:pb-24">
+        <Reveal>
+          <BookingCTA />
+        </Reveal>
       </Container>
     </main>
   );
