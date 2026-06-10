@@ -20,21 +20,29 @@ export function Navbar() {
       <Container className="flex min-h-16 items-center justify-between gap-4">
         <BrandMark />
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium text-zinc-600 transition hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
-                pathname === item.href && "bg-zinc-200/70 text-zinc-950 dark:bg-white/10 dark:text-white",
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems
+            .filter((item) => item.href !== "/book")
+            .map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "rounded-md px-3 py-2 text-sm font-medium text-zinc-600 transition hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white",
+                  pathname === item.href && "bg-zinc-200/70 text-zinc-950 dark:bg-white/10 dark:text-white",
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
         </nav>
         <div className="flex items-center gap-2">
           <ThemeToggle />
+          <Link
+            href="/book"
+            className="hidden min-h-10 items-center rounded-md bg-zinc-950 px-4 text-sm font-semibold text-white transition hover:bg-zinc-800 lg:inline-flex dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
+          >
+            Book a call
+          </Link>
           <button
             type="button"
             className="grid size-10 place-items-center rounded-md border border-zinc-300 text-zinc-700 lg:hidden dark:border-white/15 dark:text-zinc-300"
