@@ -1,10 +1,15 @@
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+
 import { ArticleCard } from "@/components/sections/article-card";
 import { BookingCTA } from "@/components/sections/booking-cta";
 import { HeroSection } from "@/components/sections/hero-section";
+import { HomeIntro } from "@/components/sections/home-intro";
 import { ProjectCard } from "@/components/sections/project-card";
 import { ServiceCard } from "@/components/sections/service-card";
 import { NewsletterSignup } from "@/components/forms/newsletter-signup";
 import { Container } from "@/components/ui/container";
+import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { projects, services } from "@/data/site";
 import { getAllArticles } from "@/lib/articles";
@@ -17,67 +22,128 @@ export const metadata = createMetadata({
   path: "/",
 });
 
+function ViewAllLink({ href, label }: { href: string; label: string }) {
+  return (
+    <Link
+      href={href}
+      className="group inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-zinc-950 dark:text-white"
+    >
+      {label}
+      <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+    </Link>
+  );
+}
+
 export default function HomePage() {
   const articles = getAllArticles().slice(0, 3);
 
   return (
     <main>
       <HeroSection />
-      <section className="py-16">
+      <HomeIntro />
+      <section className="py-20 sm:py-24">
         <Container>
-          <SectionHeading
-            eyebrow="Projects"
-            title="The operating system around the personal brand."
-            description="Codexier AB, Forare, and the AI Learning Hub give visitors clear paths into Jamshaid's work."
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {projects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
-          </div>
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <SectionHeading
+                eyebrow="Projects"
+                title={
+                  <>
+                    What I&apos;m{" "}
+                    <span className="font-display font-normal italic">building</span>.
+                  </>
+                }
+                description="Codexier AB, Forare, and the AI Learning Hub — three clear paths into my work as a founder and builder."
+              />
+              <ViewAllLink href="/projects" label="View all projects" />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {projects.map((project, index) => (
+                <ProjectCard key={project.slug} project={project} index={index} />
+              ))}
+            </div>
+          </Reveal>
         </Container>
       </section>
-      <section className="py-16">
+      <section className="py-20 sm:py-24">
         <Container>
-          <SectionHeading
-            eyebrow="Services"
-            title="Work with Jamshaid on strategy, AI, software, and systems."
-            description="Simple offer paths for people who want clarity, consultation, or delivery through Codexier."
-          />
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.title} service={service} />
-            ))}
-          </div>
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <SectionHeading
+                eyebrow="Services"
+                title={
+                  <>
+                    How we can{" "}
+                    <span className="font-display font-normal italic">work together</span>.
+                  </>
+                }
+                description="Simple offer paths if you want clarity, consultation, or full delivery through Codexier."
+              />
+              <ViewAllLink href="/work-with-me" label="All services" />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="mt-12 grid gap-6 lg:grid-cols-3">
+              {services.map((service, index) => (
+                <ServiceCard key={service.title} service={service} featured={index === 0} />
+              ))}
+            </div>
+          </Reveal>
         </Container>
       </section>
-      <section className="py-16">
+      <section className="py-20 sm:py-24">
         <Container>
-          <SectionHeading
-            eyebrow="Articles"
-            title="Latest AI learning notes."
-            description="Starter articles for the learning hub, written to make AI ideas practical and clear."
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {articles.map((article) => (
-              <ArticleCard key={article.slug} article={article} />
-            ))}
-          </div>
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <SectionHeading
+                eyebrow="Writing"
+                title={
+                  <>
+                    Notes from my{" "}
+                    <span className="font-display font-normal italic">AI journey</span>.
+                  </>
+                }
+                description="I write as I learn — practical explainers that turn AI study into clear, usable ideas."
+              />
+              <ViewAllLink href="/ai-articles" label="Read all articles" />
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {articles.map((article) => (
+                <ArticleCard key={article.slug} article={article} />
+              ))}
+            </div>
+          </Reveal>
         </Container>
       </section>
-      <Container className="py-16">
-        <BookingCTA />
+      <Container className="py-20 sm:py-24">
+        <Reveal>
+          <BookingCTA />
+        </Reveal>
       </Container>
-      <section className="py-16">
+      <section className="pb-24 pt-4">
         <Container>
-          <SectionHeading
-            eyebrow="Newsletter"
-            title="Follow the build notes."
-            description="Get practical AI learning, founder notes, and Codexier/Forare updates."
-          />
-          <div className="mt-8">
-            <NewsletterSignup />
-          </div>
+          <Reveal>
+            <div className="mx-auto max-w-3xl text-center">
+              <SectionHeading
+                className="mx-auto max-w-3xl"
+                eyebrow="Newsletter"
+                title={
+                  <>
+                    Follow the{" "}
+                    <span className="font-display font-normal italic">build notes</span>.
+                  </>
+                }
+                description="Practical AI learning, founder notes, and Codexier/Forare updates — straight to your inbox. No noise."
+              />
+              <div className="mt-8 text-left">
+                <NewsletterSignup />
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </section>
     </main>
