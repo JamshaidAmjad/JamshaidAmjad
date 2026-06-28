@@ -1,0 +1,41 @@
+---
+title: "Avoiding Data Leakage In Machine Learning Pipelines"
+description: "How data leakage sneaks into machine learning pipelines and quietly produces results that look great but are not real."
+date: "2026-06-12"
+category: "Data Science Programming"
+tags:
+  - data leakage
+  - machine learning
+  - data science
+  - model evaluation
+related:
+  - choosing-the-right-metric-for-your-model
+  - training-validation-and-testing-in-machine-learning
+seoTitle: "Avoiding Data Leakage In Machine Learning Pipelines"
+seoDescription: "Common ways data leakage enters machine learning pipelines and practical habits to catch it before it fools you."
+keyTakeaways:
+  - Leakage happens when information from outside the training data sneaks into training.
+  - Scaling, encoding, and imputing must be fit only on training data, never the full dataset.
+  - A suspiciously perfect result is a signal to check for leakage, not celebrate.
+---
+
+## The result that was too good to be true
+
+I once built a model that predicted a target with almost perfect accuracy on my test set. I was excited for about an hour, until I realized one of my features was calculated using information that included the target itself, just shifted slightly in time. The model was not learning a pattern. It was cheating, because I had accidentally given it the answer in a different form. That is data leakage, and it is one of the easiest mistakes to make without noticing.
+
+## The most common ways it sneaks in
+
+- Scaling or normalizing the entire dataset before splitting into train and test, so the test set's statistics influence the training data.
+- Filling missing values using statistics like the mean calculated across the full dataset instead of only the training portion.
+- Including a feature that is only available after the outcome already happened, like a "cancellation reason" column when predicting whether someone will cancel.
+- Letting the same customer or entity appear in both the training and test sets when rows should be grouped together.
+
+Each of these looks harmless in code and produces a model that performs great in testing and falls apart in the real world.
+
+## The habit that catches most of it
+
+I now do every transformation, including scaling, encoding, and filling missing values, after splitting the data, and I fit those transformations only on the training set. The test set gets transformed using parameters learned from training data, never recalculated from itself. It is a small ordering change, but it is the difference between an honest evaluation and a fake one.
+
+## Treat great results with suspicion
+
+If a model performs unusually well, especially early in a project, my first instinct now is to look for leakage before assuming I built something great. Real-world data is messy, and models trained on it rarely look perfect. When they do look perfect, the data is usually telling you something is wrong, not that you got lucky.

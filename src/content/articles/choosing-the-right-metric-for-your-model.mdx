@@ -1,0 +1,41 @@
+---
+title: "Choosing The Right Metric For Your Model"
+description: "Accuracy is often the wrong metric. Here is how I decide which metric actually reflects what matters for a model."
+date: "2026-06-09"
+category: "Data Science Programming"
+tags:
+  - machine learning
+  - model evaluation
+  - data science
+related:
+  - why-feature-engineering-still-matters
+  - training-validation-and-testing-in-machine-learning
+seoTitle: "Choosing The Right Metric For Your Model"
+seoDescription: "How to choose the right evaluation metric for a machine learning model instead of defaulting to accuracy."
+keyTakeaways:
+  - Accuracy can be misleading whenever classes are imbalanced.
+  - The right metric depends on which mistake is more costly in the real world.
+  - Pick the metric before you start modeling, not after seeing the results.
+---
+
+## The accuracy trap
+
+A fraud detection model can be 99% accurate and still be useless. If only 1% of transactions are actually fraud, a model that predicts "not fraud" every single time scores 99% accuracy while catching zero real cases. I learned this the hard way on an early project, when I proudly reported a high accuracy number to a teammate who simply asked, "but how many actual fraud cases did it catch?" I did not have a good answer. That question is the right one to ask before celebrating any score.
+
+## Match the metric to the real cost of being wrong
+
+The right metric depends on what a false positive costs versus what a false negative costs, and those are rarely equal.
+
+- In fraud or disease detection, missing a real case is usually worse than a false alarm, so recall matters more.
+- In spam filtering, wrongly flagging a real email is annoying, so precision matters more.
+- In forecasting demand or prices, you usually care about how far off the prediction is, so something like mean absolute error fits better than a classification metric at all.
+
+There is no universal "best" metric. There is only the metric that matches the actual decision the model is feeding into.
+
+## Decide before you model, not after
+
+One habit that has saved me from fooling myself: I decide the evaluation metric before training anything, based on the business or research question, not after looking at which metric makes the results look best. If you choose the metric after seeing several options, it is easy to unconsciously pick the one that flatters your model.
+
+## A simple practical check
+
+Whenever I report a metric now, I imagine explaining it to someone affected by the model's decision, like a customer or a patient. If the metric does not clearly answer "how often does this go wrong, and in which direction," it is probably not the metric that should be driving the decision. Getting this right early prevents a lot of false confidence later.

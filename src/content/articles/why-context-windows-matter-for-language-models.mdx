@@ -1,0 +1,42 @@
+---
+title: "Why Context Windows Matter For Language Models"
+description: "A practical look at what a context window actually limits and why it shapes everything you build with an LLM."
+date: "2026-05-25"
+category: "Transformers"
+tags:
+  - context window
+  - transformers
+  - large language models
+  - prompting
+related:
+  - how-self-attention-works-in-plain-language
+  - tokens-explained-what-a-language-model-actually-sees
+seoTitle: "Why Context Windows Matter For Language Models"
+seoDescription: "Understand what a context window really is, why it limits language models, and how it changes how you should build with them."
+keyTakeaways:
+  - A context window is the maximum amount of text a model can consider at once.
+  - Everything outside the window simply does not exist to the model.
+  - Designing around context limits is a core skill for building with LLMs.
+---
+
+## What a context window actually is
+
+A context window is the total amount of text, measured in tokens, that a model can hold in its attention at one time. That includes your prompt, any documents you paste in, the conversation history, and the response it is generating. Once you go past that limit, the oldest or least relevant material gets dropped or never makes it in at all.
+
+I think of it like a desk. You can spread out a lot of paper, but at some point the desk runs out of room. The model cannot magically remember what fell off the edge. It only reasons over what is currently in front of it.
+
+## Why this trips people up
+
+A common mistake I see is people assuming a model "remembers" earlier parts of a long conversation forever. It does not, unless the system explicitly re-sends that history inside the window on every turn. If you have been chatting for an hour and the early context scrolled out, the model has genuinely lost it, not just deprioritized it.
+
+The same applies to long documents. If you dump a 200-page PDF into a tool with a small context window, parts of it are either truncated or summarized before the model ever sees them. Any answer based on the missing parts will be guesswork dressed up as confidence.
+
+## How this changes the way I build
+
+- I check the actual context limit of the model I am using before designing a feature around it.
+- I put the most important instructions near the end of the prompt, since recency tends to get weighted more reliably.
+- For long source material, I chunk it, retrieve only the relevant pieces, and feed those in instead of the whole document.
+
+## The bigger lesson
+
+A bigger context window is not a free pass to skip good information design. Even models with huge windows perform better when you are deliberate about what you include. Treat the context window as a budget, not a guarantee, and you will get far more reliable behavior out of any model you work with.

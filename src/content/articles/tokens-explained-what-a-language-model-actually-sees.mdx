@@ -1,0 +1,42 @@
+---
+title: "Tokens Explained: What A Language Model Actually Sees"
+description: "A clear explanation of what tokens are and why a language model never actually reads words the way you do."
+date: "2026-05-26"
+category: "Transformers"
+tags:
+  - tokens
+  - transformers
+  - large language models
+  - tokenization
+related:
+  - how-self-attention-works-in-plain-language
+  - why-context-windows-matter-for-language-models
+seoTitle: "Tokens Explained: What A Language Model Actually Sees"
+seoDescription: "Learn what tokens really are, how tokenization works, and why it explains some strange LLM behavior."
+keyTakeaways:
+  - A token is a chunk of text, not always a full word.
+  - Tokenization explains why models struggle with spelling and counting.
+  - Thinking in tokens helps you write better prompts and estimate cost.
+---
+
+## A model never reads "words"
+
+When you type a sentence into a language model, it does not see letters or words the way you do. It sees tokens, which are chunks of text produced by a tokenizer. A token might be a whole common word like "the," part of a longer word like "trans" and "former," or even a single punctuation mark. Everything gets converted into a sequence of numbers that map to entries in the model's vocabulary before any processing happens.
+
+This matters because the model's entire understanding of language is built on these chunks, not on the raw characters. It never directly "sees" the word the way a human reader does.
+
+## Why this explains weird model behavior
+
+A lot of confusing model quirks make sense once you think in tokens. Ask a model to count the letters in a word and it sometimes gets it wrong, because the word might be a single token to the model, not a string of individual letters it can scan. Ask it to reverse a word and the same issue shows up. The model is reasoning about token patterns it has seen during training, not character-by-character logic.
+
+Tokenization also explains why uncommon words, rare names, or non-English text can cost more and perform worse. Rare strings often get split into many small tokens instead of one clean token, which uses up more of the context window and gives the model less efficient representations to work with.
+
+## Practical things this changes
+
+- Cost and speed are usually billed per token, so verbose prompts and responses cost more than concise ones.
+- Code, technical jargon, and names can use far more tokens than plain English sentences of the same length.
+- If a task depends on exact character-level manipulation, it is often safer to handle that with code rather than asking the model directly.
+
+## Why it is worth understanding
+
+You do not need to memorize tokenizer internals to build well with language models. But knowing that the model operates on these arbitrary chunks, not on words or letters, makes a lot of its strengths and limitations click into place. It turns "the model is being weird" into "that is exactly what I would expect given how tokenization works."

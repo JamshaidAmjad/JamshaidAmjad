@@ -1,0 +1,41 @@
+---
+title: "Fine-Tuning Versus Prompting A Transformer Model"
+description: "A practical comparison of when to fine-tune a model versus when a good prompt is the better, cheaper choice."
+date: "2026-05-28"
+category: "Transformers"
+tags:
+  - fine-tuning
+  - prompting
+  - transformers
+  - large language models
+related:
+  - how-i-think-about-building-ai-products
+  - encoder-versus-decoder-transformers-explained
+seoTitle: "Fine-Tuning Versus Prompting A Transformer Model"
+seoDescription: "Learn the real difference between fine-tuning and prompting, and how to decide which approach actually fits your project."
+keyTakeaways:
+  - Prompting changes behavior at inference time; fine-tuning changes the model's weights.
+  - Most projects should start with prompting and only fine-tune when there is a clear, repeated gap.
+  - Fine-tuning costs more in data, time, and maintenance than people expect.
+---
+
+## Two different ways to change behavior
+
+Prompting and fine-tuning both try to get a model to behave the way you want, but they work at completely different levels. Prompting gives the model instructions, examples, or context at the moment you ask it something. The model's underlying weights never change. Fine-tuning actually adjusts those weights by training the model further on examples specific to your task, so the new behavior becomes baked in rather than requested each time.
+
+## Why I default to prompting first
+
+For almost every project I have worked on, a well-written prompt with good examples gets you most of the way there. It is fast to test, costs nothing extra beyond normal usage, and you can iterate on it in minutes. If a prompt is not working, you can usually tell quickly and adjust it, which is a much shorter feedback loop than retraining a model.
+
+Fine-tuning, by contrast, requires a labeled dataset that actually represents the behavior you want, a training run, evaluation against that new model, and a plan for what happens when the base model gets updated. That is a real engineering project, not a quick fix.
+
+## When fine-tuning actually earns its cost
+
+- You need a consistent style, tone, or output format across thousands of requests where prompting keeps drifting.
+- You are working with a narrow domain with vocabulary or patterns the base model rarely saw during training.
+- Latency or cost matters enough that a smaller, fine-tuned model beats sending a long, detailed prompt to a bigger one every time.
+- You have already tried strong prompting and hit a real, repeated ceiling, not just an occasional miss.
+
+## The practical takeaway
+
+I treat fine-tuning as something you earn the need for, not something you reach for by default. Start with prompting, push it as far as it will go with clear instructions and good examples, and only invest in fine-tuning once you have evidence that prompting alone cannot close the gap. Skipping straight to fine-tuning usually means solving a problem you have not fully understood yet.

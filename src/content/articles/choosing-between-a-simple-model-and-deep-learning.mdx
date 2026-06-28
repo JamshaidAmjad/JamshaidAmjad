@@ -1,0 +1,36 @@
+---
+title: "Choosing Between A Simple Model And Deep Learning"
+description: "A practical guide to deciding when a simple model beats deep learning, and when it doesn't."
+date: "2026-05-15"
+category: "Deep Learning"
+tags:
+  - deep learning
+  - machine learning
+  - model selection
+  - fundamentals
+related:
+  - deep-learning-explained-without-the-hype
+  - choosing-the-right-metric-for-your-model
+seoTitle: "Choosing Between A Simple Model And Deep Learning"
+seoDescription: "How to decide whether your problem needs deep learning or whether a simpler model will work better."
+keyTakeaways:
+  - Start with the simplest model that could plausibly solve the problem.
+  - Deep learning earns its complexity with large, unstructured, or messy data.
+  - Switching to deep learning later is easier than recovering from over-engineering early.
+---
+
+## The default question I ask
+
+Whenever someone tells me they want to "use deep learning" for a project, my first question is whether they've tried anything simpler first. Linear regression, logistic regression, decision trees, gradient boosted trees, these models are fast to train, easy to explain, and often surprisingly competitive. If a simple model gets you 90% of the way to your goal in an afternoon, that's information you want before committing weeks to a deep learning pipeline.
+
+## When simple models genuinely win
+
+Simple models tend to win when your data is structured, your dataset is small to medium sized, and your features already capture the relevant signal. A spreadsheet of customer transactions with twenty meaningful columns rarely needs a neural network. A gradient boosted tree will likely match or beat it, train in minutes, and let you explain exactly why it made a decision. That last part matters more than people admit, especially when a client or regulator asks "why did the model say this."
+
+## When deep learning actually pays off
+
+Deep learning earns its complexity when the data is unstructured, images, audio, raw text, or video, where hand-crafting features is impractical. It also helps when you have a large amount of data and the relationships between inputs and outputs are too complex for a human to encode as rules. If you're building something like a defect detector from camera images or a document classifier from raw text, deep learning is often the right starting point, not an upgrade you reach for later.
+
+## The cost people underestimate
+
+What gets missed is the operational cost of deep learning: more compute, longer training cycles, harder debugging, and a model that's tougher to explain when something goes wrong. None of that is a reason to avoid it, but it should be a deliberate trade you're making, not a default because it sounds more advanced. I've seen more value lost from over-engineering a simple problem than from under-engineering a complex one. Start simple, measure the gap, and only add complexity when the data and the problem actually demand it.

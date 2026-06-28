@@ -1,0 +1,45 @@
+---
+title: "Building Trust Before Building AI Features"
+description: "Why trust has to be designed into an AI feature from day one, not patched on after launch."
+date: "2026-06-19"
+category: "Business with AI"
+tags:
+  - trust
+  - AI strategy
+  - product design
+  - business with AI
+related:
+  - how-i-think-about-building-ai-products
+  - when-not-to-use-ai-in-your-business
+seoTitle: "Building Trust Before Building AI Features"
+seoDescription: "Trust has to be designed into AI features from the start. Here is how I think about it after building client AI tools at Codexier AB."
+keyTakeaways:
+  - Trust is lost in seconds when a system is confidently wrong.
+  - Showing your reasoning matters more than showing your accuracy number.
+  - Small honest limits build more trust than big unproven promises.
+---
+
+## Trust is the actual product
+
+When I build AI features for clients at Codexier AB, I have started treating trust as a requirement, not a side effect of good accuracy. A feature that is right 95% of the time but gives no signal about the other 5% will lose a user faster than a feature that is right 80% of the time but is honest about its limits.
+
+People do not abandon AI tools because the tool is imperfect. They abandon them because the tool was confidently wrong once, and they no longer know when to believe it.
+
+## What actually earns trust
+
+A few things have consistently mattered more than raw model quality in the projects I have shipped.
+
+- Showing the source or reasoning behind an answer, not just the answer.
+- Giving the user an easy way to correct or override the system.
+- Being specific about what the feature does not do, before they find out the hard way.
+- Starting with a low-stakes use case so early mistakes are cheap.
+
+None of these require a better model. They require better design around the model.
+
+## The fix-it cost is part of the trust equation
+
+Early on at Codexier AB, I underestimated how much trust depends on how easy it is to fix a mistake. If correcting an AI suggestion takes longer than doing the task manually, users quietly stop using the feature, even if it is technically helpful most of the time. Now I design the correction path before I finish the main feature.
+
+## Start narrow, earn the next step
+
+The pattern I trust most now: launch an AI feature in a place where being wrong is cheap, let users see it work consistently, then expand its responsibility. Trying to earn trust and scope at the same time is how most AI features lose both. It is slower at the start, but it is the difference between a feature people rely on and one they quietly route around.

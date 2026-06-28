@@ -1,0 +1,38 @@
+---
+title: "How Backpropagation Actually Updates A Model"
+description: "A plain walkthrough of how backpropagation turns a model's mistakes into concrete weight updates."
+date: "2026-05-13"
+category: "Deep Learning"
+tags:
+  - backpropagation
+  - deep learning
+  - neural networks
+  - training
+related:
+  - gradient-descent-explained-like-you-are-five
+  - why-weights-and-biases-matter-in-neural-networks
+seoTitle: "How Backpropagation Actually Updates A Model"
+seoDescription: "Learn what backpropagation really does inside a neural network, step by step, without the heavy math."
+keyTakeaways:
+  - Backpropagation measures how much each weight contributed to the error.
+  - It works backward from the output layer to the input layer using the chain rule.
+  - The result is a set of small, targeted updates, not a single global correction.
+---
+
+## The problem backpropagation solves
+
+A neural network makes a prediction, compares it to the right answer, and gets an error score. The hard question is what to do next. The network might have thousands or millions of weights, and you need to know how much each one is responsible for that error. Backpropagation is the method that answers this question efficiently.
+
+## Working backward from the error
+
+The name gives it away. Instead of guessing how to change every weight at once, backpropagation starts at the output layer, where the error is easiest to measure, and works backward through each layer toward the input. At every layer, it asks a narrow question: if I nudge this weight slightly, how much does the final error change? That sensitivity is called a gradient.
+
+The chain rule from calculus is what makes this possible. It lets you break a complicated cause-and-effect chain, input to hidden layer to hidden layer to output, into small local calculations that can be chained together. Each layer only needs to know the gradient coming from the layer after it and its own local math. No layer needs to understand the whole network.
+
+## From gradient to update
+
+Once every weight has a gradient, an optimizer, usually some form of gradient descent, uses that number to decide how to nudge the weight. A large gradient means that weight had a large effect on the error, so it gets a bigger correction. A near-zero gradient means changing that weight barely matters right now, so it's left close to where it is. This happens for every weight, every layer, every training step.
+
+## Why this matters in practice
+
+You don't need to compute gradients by hand. Frameworks like PyTorch and TensorFlow do this automatically. But understanding the idea helps you debug real problems. If gradients shrink to almost nothing as they travel backward through many layers, the early layers barely update at all, a problem known as vanishing gradients. If they grow uncontrollably, training becomes unstable. Knowing that backpropagation is just "error flowing backward through local calculations" makes both problems much easier to reason about when your model refuses to learn.

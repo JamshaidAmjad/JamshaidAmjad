@@ -1,0 +1,40 @@
+---
+title: "Encoder Versus Decoder Transformers Explained"
+description: "A practical breakdown of encoder, decoder, and encoder-decoder transformers and when each architecture is used."
+date: "2026-05-24"
+category: "Transformers"
+tags:
+  - transformers
+  - encoder
+  - decoder
+  - large language models
+related:
+  - why-transformers-changed-ai
+  - how-self-attention-works-in-plain-language
+seoTitle: "Encoder Versus Decoder Transformers Explained"
+seoDescription: "Understand the difference between encoder, decoder, and encoder-decoder transformer models and their uses."
+keyTakeaways:
+  - Encoders build rich representations of input text for understanding tasks.
+  - Decoders generate text one token at a time, only looking backward at what came before.
+  - Most modern chat assistants are decoder-only models built for generation.
+---
+
+## Two different jobs, two different designs
+
+The original transformer paper introduced an encoder and a decoder working together, but most models today only use one half, depending on what job they need to do. Understanding which half does what clears up a lot of confusion about why models like BERT and models like GPT behave so differently despite both being "transformers."
+
+## What an encoder is built for
+
+An encoder reads the entire input at once and lets every token attend to every other token, both before and after it in the sequence. This is called bidirectional attention. The goal isn't to generate new text, it's to build a rich, contextual representation of the input that some other part of the system can use, for classification, search, or extracting structured information. Models like BERT are encoder-only, which makes them strong at understanding tasks: sentiment analysis, named entity recognition, semantic search, but they aren't designed to generate fluent new text on their own.
+
+## What a decoder is built for
+
+A decoder generates text one token at a time, and critically, it can only attend to tokens that came before the one it's currently producing. This is called causal or autoregressive attention. It's what makes the model predict a sensible "next word" without peeking at words it hasn't generated yet. Models like GPT are decoder-only, which is why they're so good at open-ended generation: writing, conversation, code completion. Every modern chat assistant you've used is, under the hood, a decoder doing repeated next-token prediction.
+
+## When you need both
+
+Some tasks genuinely need both halves, most clearly translation. An encoder reads and represents the full source sentence, and a decoder generates the target sentence, attending back to the encoder's representation at every generation step. Models like the original T5 use this full encoder-decoder structure. It's more complex to train and run, so it's used when the task truly requires transforming one full sequence into a structurally different one, rather than just continuing a sequence.
+
+## Why this distinction is worth knowing
+
+If you're choosing a model for a project, this distinction tells you a lot before you even look at benchmarks. Need to understand or classify text? Lean encoder. Need to generate fluent new text? Lean decoder. Need to transform one structured sequence into another? That's where the full encoder-decoder setup earns its extra complexity.

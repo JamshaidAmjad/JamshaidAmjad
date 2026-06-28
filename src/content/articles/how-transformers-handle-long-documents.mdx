@@ -1,0 +1,43 @@
+---
+title: "How Transformers Handle Long Documents"
+description: "A practical breakdown of how transformer-based systems deal with documents longer than their context window."
+date: "2026-05-27"
+category: "Transformers"
+tags:
+  - transformers
+  - long documents
+  - retrieval
+  - large language models
+related:
+  - why-context-windows-matter-for-language-models
+  - encoder-versus-decoder-transformers-explained
+seoTitle: "How Transformers Handle Long Documents"
+seoDescription: "See how transformer models and the systems around them process documents that are longer than the model's context window."
+keyTakeaways:
+  - A raw transformer cannot read more text than its context window allows.
+  - Real systems work around this with chunking, retrieval, and summarization.
+  - Document strategy matters as much as model choice for long-text tasks.
+---
+
+## The core problem
+
+A transformer's attention mechanism compares every token against every other token, which is part of why it understands context so well. It is also why this gets expensive fast. As a document gets longer, the computation needed grows quickly, and at some point the document simply will not fit inside the model's context window at all. A raw transformer, by itself, cannot read a document longer than its window, no matter how good the model is.
+
+## How real systems get around this
+
+The trick is that almost nothing you use is "just a transformer." It is a transformer wrapped in a system that manages the document for it.
+
+- **Chunking**: long documents get split into smaller pieces, often with some overlap so context is not lost at the seams.
+- **Retrieval**: instead of feeding the whole document in, the system searches for the chunks most relevant to your question and only sends those.
+- **Summarization passes**: some systems summarize sections first, then summarize the summaries, building a shorter version that still fits.
+- **Sliding context**: in long conversations or documents, older content gets dropped or compressed as new content comes in.
+
+This is why a tool can claim to "read" a 300-page report even when the underlying model's context window is much smaller than that. It is not reading the whole thing in one pass. It is being selective about what gets shown to the model at each step.
+
+## What this means in practice
+
+When I am building something that touches long documents, I do not assume the model magically understands the whole file. I think about how the document gets broken up, what gets retrieved, and what might get missed. A badly chunked document can cause the system to confidently answer using the wrong section, because the right section never made it into context.
+
+## The practical takeaway
+
+If your product deals with long documents, the chunking and retrieval strategy is often more important than which model you pick. A great model fed the wrong slice of a document will still give you a wrong answer. Get the document pipeline right first, then worry about the model.

@@ -1,0 +1,38 @@
+---
+title: "How Self-Attention Works In Plain Language"
+description: "A plain-language walkthrough of self-attention, the mechanism that lets transformers weigh context."
+date: "2026-05-23"
+category: "Transformers"
+tags:
+  - self-attention
+  - transformers
+  - attention
+  - large language models
+related:
+  - why-transformers-changed-ai
+  - tokens-explained-what-a-language-model-actually-sees
+seoTitle: "How Self-Attention Works In Plain Language"
+seoDescription: "Learn how self-attention works inside a transformer model, explained without heavy math or jargon."
+keyTakeaways:
+  - Self-attention lets every token look at every other token to decide what matters.
+  - Each token gets a query, key, and value used to compute relevance scores.
+  - The result is a context-aware representation, not a fixed, isolated meaning for each word.
+---
+
+## The problem self-attention solves
+
+Words change meaning depending on what's around them. The word "bank" means something different next to "river" than it does next to "loan." Older language models processed text mostly in order, one word after another, which made it harder to connect a word to something far earlier in the sentence. Self-attention solves this by letting every token in a sequence directly look at every other token, regardless of distance, and decide how relevant each one is.
+
+## Query, key, and value, without the jargon fog
+
+Each token gets turned into three vectors: a query, a key, and a value. Think of the query as the question a token is asking: "what should I pay attention to?" The key is like a label each token holds up, describing what kind of information it offers. The value is the actual content a token will share if it's chosen as relevant.
+
+To figure out how much one token should attend to another, the model compares that token's query against every other token's key. A strong match produces a high attention score, meaning that other token's value should influence this one heavily. A weak match means it contributes little. These scores get normalized so they sum to something usable, and then the model blends together the values of all tokens, weighted by these scores.
+
+## What comes out the other side
+
+The output for each token is no longer just "the word itself." It's a blended representation that incorporates relevant context from everywhere else in the sequence, weighted by how relevant that context actually is. This is why transformers handle long-range relationships so well, a pronoun near the end of a paragraph can directly attend back to the noun it refers to at the start, no matter how much text sits in between.
+
+## Why this matters beyond the architecture diagram
+
+Self-attention is the mechanical reason transformers feel like they understand context. They don't reason about meaning the way people do, but the attention mechanism gives them a structured way to weigh relevant information dynamically, instead of treating every word the same regardless of what surrounds it. That single shift is most of why modern language models read as coherent as they do.

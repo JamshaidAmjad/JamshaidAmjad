@@ -1,0 +1,42 @@
+---
+title: "Why Feature Engineering Still Matters"
+description: "Even with powerful models available, thoughtful feature engineering often makes a bigger difference than model choice."
+date: "2026-06-08"
+category: "Data Science Programming"
+tags:
+  - feature engineering
+  - data science
+  - machine learning
+seoTitle: "Why Feature Engineering Still Matters"
+seoDescription: "Why feature engineering remains one of the highest-leverage steps in building a useful machine learning model."
+related:
+  - choosing-the-right-metric-for-your-model
+  - cleaning-messy-data-before-you-train-anything
+keyTakeaways:
+  - Raw data rarely contains the signal in the form a model needs it.
+  - Domain knowledge often beats a more complex model architecture.
+  - Good features make simple models perform surprisingly well.
+---
+
+## A story that changed how I think about this
+
+I once spent a week trying different models on a dataset to predict customer churn, and nothing moved the accuracy past a mediocre baseline. Then I added one new feature: days since the customer's last purchase. That single feature, built from data that was already there, improved the model more than every algorithm change combined. The raw columns were present the whole time. They just were not shaped in a way the model could use well.
+
+## What feature engineering actually means
+
+It is the process of turning raw columns into information that better represents the pattern you are trying to capture. That can mean:
+
+- Combining a start date and end date into a duration.
+- Turning a free-text category into grouped buckets.
+- Creating ratios, like spend per visit instead of raw spend and raw visits separately.
+- Encoding time-based patterns, like day of week or seasonality.
+
+None of this requires fancy tools. It requires understanding what the data represents in the real world.
+
+## Why this still matters with modern models
+
+It is tempting to assume that powerful models can find these patterns on their own, so feature engineering matters less now. In practice, models can only learn from the signal you give them. A model cannot invent "days since last purchase" out of two separate date columns unless you hand it that relationship directly, or unless you have enormous amounts of data and compute to spare. Most of us do not have unlimited data, so the shortcut is doing some of that thinking ourselves.
+
+## The practical takeaway
+
+Before reaching for a more complex model, I ask whether the current features actually describe the problem well. Usually, a simple model with well-built features beats a complex model with raw, untouched data. Feature engineering is slower and less glamorous than swapping in a new algorithm, but it is consistently where the real performance gains come from.

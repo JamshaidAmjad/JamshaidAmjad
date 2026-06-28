@@ -1,0 +1,40 @@
+---
+title: "Common Neural Network Mistakes Beginners Make"
+description: "The recurring mistakes I see beginners make when training their first neural networks, and how to avoid them."
+date: "2026-05-21"
+category: "Neural Networks"
+tags:
+  - neural networks
+  - deep learning
+  - beginner mistakes
+  - training
+related:
+  - activation-functions-explained-in-plain-language
+  - overfitting-in-deep-learning-and-how-to-spot-it
+seoTitle: "Common Neural Network Mistakes Beginners Make"
+seoDescription: "The most common neural network training mistakes beginners make, and practical ways to fix each one."
+keyTakeaways:
+  - Most early mistakes come from skipping data checks before training begins.
+  - A learning rate that's too high or too low explains a surprising number of failed models.
+  - Watching only training loss hides overfitting that validation loss would catch immediately.
+---
+
+## Not looking at the data first
+
+The most common mistake I see isn't in the model code at all, it's skipping straight to training without actually looking at the data. Mismatched labels, missing values, wildly different feature scales, duplicate rows, all of these quietly sabotage a model before a single line of training code runs. A few minutes spent plotting distributions and checking for obvious data issues saves hours of confused debugging later.
+
+## Forgetting to normalize inputs
+
+Neural networks are sensitive to the scale of their inputs. If one feature ranges from 0 to 1 and another ranges from 0 to 100,000, the network will struggle to learn from both fairly, and gradient descent becomes unstable. Normalizing or standardizing your inputs before training is one of the simplest fixes that consistently improves results, and it's also one of the most frequently skipped steps by beginners eager to see a model run.
+
+## Picking a learning rate by accident
+
+A surprising number of "broken" models are actually fine models with a bad learning rate. Set it too high, and the loss bounces around or explodes instead of decreasing. Set it too low, and training looks like nothing is happening because progress is too slow to see in a reasonable number of steps. Before assuming your architecture is wrong, try adjusting the learning rate up and down by a factor of ten and watch what happens to the loss curve.
+
+## Only watching training loss
+
+It's tempting to celebrate when training loss drops steadily. But training loss only tells you how well the model fits data it has already seen. Without checking validation loss on data the model hasn't trained on, you can't tell if it's actually learning generalizable patterns or just memorizing the training set. If training loss keeps falling while validation loss stalls or rises, that gap is overfitting, and it's invisible if you're only watching one number.
+
+## The pattern behind all of these
+
+Every mistake on this list comes from rushing past a basic check to get to the exciting part, building the model. Slowing down at the data, scaling, and evaluation stages catches most of these problems before they cost you a day of confused debugging.

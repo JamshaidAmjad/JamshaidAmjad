@@ -1,0 +1,42 @@
+---
+title: "Pandas Patterns I Use In Almost Every Project"
+description: "A short list of pandas patterns that show up in nearly every data science project I work on, beginner to advanced."
+date: "2026-06-11"
+category: "Data Science Programming"
+tags:
+  - pandas
+  - python
+  - data science
+related:
+  - python-habits-that-make-data-science-code-better
+  - cleaning-messy-data-before-you-train-anything
+seoTitle: "Pandas Patterns I Use In Almost Every Project"
+seoDescription: "Practical pandas patterns for data cleaning, grouping, and transformation that repeat across almost every project."
+keyTakeaways:
+  - A handful of pandas patterns cover most real-world data tasks.
+  - Method chaining keeps transformations readable instead of scattered across cells.
+  - Checking shape and dtypes after every step catches mistakes early.
+---
+
+## The patterns that repeat constantly
+
+After enough projects, you notice the same few pandas operations showing up again and again, just on different data. Instead of relearning them each time, I keep a mental shortlist:
+
+- `groupby` followed by `agg` to summarize data by category, like average order value per customer.
+- `merge` to bring two related tables together, almost always followed by checking the row count to confirm nothing duplicated unexpectedly.
+- `value_counts` as the fastest way to spot unexpected categories or typos in a column.
+- `apply` for custom row-level logic, used sparingly because it is slower than built-in vectorized operations.
+
+These four cover a surprising share of day-to-day data work.
+
+## Chaining instead of scattering
+
+Early on, I wrote transformations across many separate cells, reassigning the same dataframe over and over. It became hard to tell which step introduced a bug. Now I chain operations together where it stays readable, so a single block shows the full transformation from raw input to the shape I need. If a step in the chain breaks, I know exactly where to look, because the chain reads top to bottom like a sentence.
+
+## A habit that catches silent errors
+
+After almost every transformation, I print the shape of the dataframe and check a few rows. Merges are the biggest offender here: a merge that should keep the same number of rows can silently multiply them if there are duplicate keys on either side. Catching that immediately, right after the merge, is far easier than catching it three steps later when a model's numbers look strange for no obvious reason.
+
+## Why this matters beyond convenience
+
+These patterns are not about writing clever code. They are about writing code that behaves the way you expect, every time, on data you have not fully inspected yet. Pandas gives you many ways to do the same thing, but the versions that fail loudly and predictably are usually the ones worth keeping in your toolkit.

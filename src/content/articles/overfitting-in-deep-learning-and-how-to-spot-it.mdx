@@ -1,0 +1,44 @@
+---
+title: "Overfitting In Deep Learning And How To Spot It"
+description: "How to recognize overfitting in a deep learning model early, before it quietly ruins your results."
+date: "2026-05-11"
+category: "Deep Learning"
+tags:
+  - deep learning
+  - overfitting
+  - model evaluation
+  - machine learning
+related:
+  - training-validation-and-testing-in-machine-learning
+  - why-deep-learning-needs-so-much-data
+seoTitle: "Overfitting In Deep Learning And How To Spot It"
+seoDescription: "Practical signs of overfitting in deep learning models, and how to catch the problem before it costs you."
+keyTakeaways:
+  - Overfitting shows up as a growing gap between training and validation performance.
+  - A model that memorizes specific examples will fail on anything slightly different.
+  - Simpler architectures and more data are usually better fixes than fancy tricks.
+---
+
+## What overfitting actually is
+
+Overfitting happens when a model learns the specific examples in its training data instead of the general pattern behind them. It's the difference between a student who understands a math concept and one who memorized the exact homework problems. Both look fine on a quiz that repeats those exact problems. Only one survives a slightly different question.
+
+## The clearest sign
+
+The most reliable signal is watching training loss and validation loss during training. If training loss keeps dropping while validation loss starts climbing or flattens out, the model has stopped learning general patterns and started memorizing the training set. This gap, not the absolute accuracy number, is the thing to watch closely.
+
+## Other signs worth checking
+
+- The model performs noticeably worse on new data than on anything from training.
+- Performance is suspiciously close to perfect on training data, especially with a small dataset.
+- Small, irrelevant changes to the input cause the prediction to flip.
+
+Any of these on their own isn't proof, but together they're a strong signal something is off.
+
+## What actually helps
+
+Adding more, more varied training data is usually the most effective fix, because it removes the model's ability to rely on coincidences. Beyond that, reducing model size, adding regularization, using dropout, or stopping training earlier all reduce the model's room to memorize. None of these are exotic tricks, they're ways of giving the model fewer opportunities to cheat.
+
+## Why this matters in practice
+
+An overfit model can look impressive in a demo and fail embarrassingly in production, because production data is never identical to your training set. Checking for overfitting isn't a final step before shipping, it's something to monitor throughout training, the same way you'd monitor any other vital sign of a project that's about to go live.

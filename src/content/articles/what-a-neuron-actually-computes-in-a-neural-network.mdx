@@ -1,0 +1,36 @@
+---
+title: "What A Neuron Actually Computes In A Neural Network"
+description: "A clear breakdown of the simple math a single artificial neuron performs, with no metaphors about brains."
+date: "2026-05-16"
+category: "Neural Networks"
+tags:
+  - neural networks
+  - fundamentals
+  - deep learning
+  - math
+related:
+  - why-weights-and-biases-matter-in-neural-networks
+  - activation-functions-explained-in-plain-language
+seoTitle: "What A Neuron Actually Computes In A Neural Network"
+seoDescription: "Learn the exact, simple calculation a single artificial neuron performs inside a neural network."
+keyTakeaways:
+  - A neuron computes a weighted sum of its inputs plus a bias.
+  - That sum is passed through an activation function to produce the output.
+  - A single neuron is simple; the network's power comes from combining many of them.
+---
+
+## Forget the brain comparison
+
+The word "neuron" makes people imagine something biological and mysterious. Drop that image. An artificial neuron is a small calculator that does exactly one thing: it takes a set of numbers, multiplies each one by a weight, adds them up, adds one more number called a bias, and passes the result through a simple function. That's the whole computation. Nothing hidden, nothing magical.
+
+## The actual steps
+
+Say a neuron receives three inputs. Each input has its own weight, a number that represents how important that input is to this particular neuron. The neuron multiplies each input by its matching weight, then adds all three results together. Then it adds the bias, a single extra number that shifts the result up or down regardless of the inputs. At this point you have one number, often called the weighted sum.
+
+## Why the activation function matters
+
+That weighted sum on its own is just a straight-line calculation, no different from basic linear algebra. The neuron then runs that number through an activation function, something like ReLU or sigmoid, which decides how the neuron "fires." This step is what lets networks model curves and complex patterns instead of only straight lines. Without it, stacking layers of neurons would be mathematically pointless, you'd still only be able to represent simple linear relationships.
+
+## Where the power actually comes from
+
+One neuron by itself can't do much. It's a weighted sum and a small nonlinear twist. The power shows up when you connect thousands of these simple units into layers, and let each one learn different weights during training. Each neuron ends up responding to a slightly different pattern in the data. Layer by layer, those small patterns combine into the kind of complex behavior we associate with neural networks. Understanding the single neuron is the foundation, because everything else, layers, depth, training, is just this same simple computation repeated and connected at scale.

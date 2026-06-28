@@ -1,0 +1,46 @@
+---
+title: "Cleaning Messy Data Before You Train Anything"
+description: "Why data cleaning quietly decides most of your model's performance, and how I approach it step by step."
+date: "2026-06-05"
+category: "Data Science Programming"
+tags:
+  - data cleaning
+  - data science
+  - machine learning
+  - python
+related:
+  - avoiding-data-leakage-in-machine-learning-pipelines
+  - how-i-structure-a-data-science-project-from-scratch
+seoTitle: "Cleaning Messy Data Before You Train Anything"
+seoDescription: "Learn a practical, step-by-step approach to cleaning messy data before training any machine learning model."
+keyTakeaways:
+  - Most model problems trace back to dirty or inconsistent data, not the algorithm.
+  - Cleaning is a sequence of checks, not a single step you do once.
+  - Documenting what you removed or changed saves you later when results look wrong.
+---
+
+## The lesson that took me too long to learn
+
+Early on, I spent days tuning models before I had even looked closely at the data. The model kept underperforming, and I assumed it was a hyperparameter problem. It was not. Three columns had inconsistent date formats, one had silent duplicate rows, and a numeric column had text values mixed in from a bad export. No amount of tuning fixes that. Cleaning comes first, always.
+
+## What I actually check, in order
+
+I run through the same checklist on almost every new dataset:
+
+- Duplicate rows, including near-duplicates that differ only by whitespace or casing.
+- Missing values, and whether they are missing at random or missing for a reason.
+- Data types, since numbers stored as strings cause silent bugs in later steps.
+- Inconsistent categories, like "NY", "New York", and "new york" all meaning the same thing.
+- Outliers that are actual data entry errors versus outliers that are real signal.
+
+Skipping any one of these can quietly poison a model that otherwise looks fine in code.
+
+## Missing values deserve more thought than people give them
+
+It is tempting to drop every row with a missing value or fill everything with the mean. Sometimes that is fine. Often it is not. A missing value in a "last login" column might mean the user never logged in at all, which is information, not noise. Before filling anything, I ask why the value is missing. The answer changes whether I drop it, fill it, or turn the missingness itself into a new feature.
+
+## Why this still matters even with powerful models
+
+Modern models are flexible, but they are not magic. They learn whatever pattern is in front of them, including the noise from bad cleaning. A model trained on messy data does not fail loudly. It fails quietly, by being slightly wrong in ways that are hard to trace back. The fix is not a smarter model. The fix is spending real time on the data before you ever call `.fit()`.
+
+Treat cleaning as part of the actual analysis, not a chore before the real work starts. It usually is the real work.

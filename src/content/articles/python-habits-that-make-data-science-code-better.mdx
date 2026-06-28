@@ -1,0 +1,42 @@
+---
+title: "Python Habits That Make Data Science Code Better"
+description: "Small, practical Python habits that make data science notebooks and scripts easier to trust and reuse."
+date: "2026-06-06"
+category: "Data Science Programming"
+tags:
+  - python
+  - data science
+  - code quality
+  - notebooks
+related:
+  - pandas-patterns-i-use-in-almost-every-project
+  - how-i-structure-a-data-science-project-from-scratch
+seoTitle: "Python Habits That Make Data Science Code Better"
+seoDescription: "Practical Python habits that make data science notebooks, scripts, and pipelines easier to trust and maintain."
+keyTakeaways:
+  - Notebooks are for exploration, not for the final version of your logic.
+  - Naming variables by what they contain, not their type, prevents confusion later.
+  - Small functions with clear inputs and outputs make debugging far easier.
+---
+
+## Notebooks are a starting point, not a destination
+
+I still use notebooks constantly, but I stopped treating them as the final product. A notebook is great for exploring an idea quickly. It is a bad place to leave your real logic, because cells run out of order, variables get overwritten, and six months later nobody can tell which cell actually produced the result. Once an idea works, I move it into a function in a regular Python file. The notebook becomes the sketchpad, not the building.
+
+## Name things for what they hold
+
+I used to name variables `df`, `df2`, `df_final` and trust my memory to keep track. That memory disappears fast. Now I name things for what they actually contain, like `orders_cleaned` or `customers_with_churn_flag`. It costs a few extra seconds to type and saves real time when I come back to the code later or when someone else has to read it.
+
+## Small functions beat long scripts
+
+A 200-line script that does cleaning, feature engineering, and modeling all in one block is hard to debug, because a single error could be hiding anywhere. I break logic into small functions with a clear input and output, like `remove_duplicates(df)` or `encode_categories(df, columns)`. When something looks wrong, I can test each function on its own instead of rerunning the whole pipeline and guessing.
+
+## Habits that pay off over time
+
+A few other habits I rely on:
+
+- Setting a random seed everywhere randomness is involved, so results are reproducible.
+- Printing shapes and a few rows after each transformation, to catch surprises early.
+- Keeping raw data untouched in its own folder and never overwriting it.
+
+None of these habits are advanced. They are boring, and that is exactly why they work. Good data science code is not clever, it is predictable, and predictable code is what lets you trust your own results.

@@ -1,0 +1,36 @@
+---
+title: "Why Weights And Biases Matter In Neural Networks"
+description: "An honest explanation of what weights and biases are and why training is really just adjusting them."
+date: "2026-05-19"
+category: "Neural Networks"
+tags:
+  - neural networks
+  - weights and biases
+  - deep learning
+  - fundamentals
+related:
+  - what-a-neuron-actually-computes-in-a-neural-network
+  - how-backpropagation-actually-updates-a-model
+seoTitle: "Why Weights And Biases Matter In Neural Networks"
+seoDescription: "A clear explanation of what weights and biases actually do inside a neural network and why training updates them."
+keyTakeaways:
+  - Weights determine how much influence each input has on a neuron's output.
+  - Biases let a neuron shift its output regardless of the input values.
+  - Training a neural network is, mechanically, just adjusting these numbers repeatedly.
+---
+
+## What training is actually adjusting
+
+When people say a model is "learning," what's happening underneath is far less mysterious than the phrase suggests. A neural network has two kinds of adjustable numbers: weights and biases. Training is the process of changing these numbers, over and over, so the network's outputs get closer to what they should be. Nothing else in the network changes during training. The architecture, the number of layers, the activation functions, all of that stays fixed. Only the weights and biases move.
+
+## What a weight actually represents
+
+A weight sits on the connection between two neurons and controls how strongly one neuron's output influences the next neuron's input. A large positive weight means that input pushes the next neuron's value up strongly. A weight near zero means that connection barely matters right now. When a model "learns" that a certain feature is important, what that really means is the weights connected to that feature have grown large enough to meaningfully affect the network's output.
+
+## What the bias adds
+
+A bias is a separate number added after the weighted sum, and it doesn't depend on the inputs at all. It lets a neuron shift its output up or down regardless of what comes in. Without a bias, every neuron would be forced to produce zero whenever all its inputs were zero, which is a real limitation. The bias gives the network the flexibility to fit data that doesn't pass cleanly through the origin.
+
+## Why this framing helps you debug
+
+If your model isn't learning, the actual problem usually traces back to how weights and biases are behaving. Weights stuck near zero across a whole layer often means there's a vanishing gradient problem. Wildly oscillating weights often signal a learning rate that's too high. Once you see weights and biases as the only moving parts in training, debugging a stuck model becomes a question of where those numbers are getting stuck, not a vague mystery about the model "not working."
