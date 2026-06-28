@@ -1,0 +1,44 @@
+name: Publish Daily AI Article
+
+on:
+  schedule:
+    - cron: "0 7 * * *" # every day at 07:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate article
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-daily-article.mjs
+
+      - name: Build site to verify the new article is valid
+        run: npm run build
+
+      - name: Commit and push the new article
+        env:
+          ARTICLE_TITLE: ${{ steps.generate.outputs.title }}
+        run: |
+          git config user.name "jimzzz-bot"
+          git config user.email "automation@jamshaidamjad.com"
+          git add src/content/articles
+          git commit -m "chore: publish daily AI article - $ARTICLE_TITLE"
+          git push origin main
