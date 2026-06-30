@@ -21,8 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      EDITORIAL_SHEET_CSV_URL: ${{ vars.EDITORIAL_SHEET_CSV_URL || secrets.EDITORIAL_SHEET_CSV_URL }}
-      FORCE_PUBLISH: ${{ inputs.force_publish || 'false' }}
+      EDITORIAL_SHEET_CSV_URL: ${{ vars.EDITORIAL_SHEET_CSV_URL }}
+      FORCE_PUBLISH: ${{ github.event_name == 'workflow_dispatch' && inputs.force_publish || false }}
       NEXT_PUBLIC_SITE_URL: https://jamshaidamjad.com
       PUBLISH_TIME_ZONE: Europe/Stockholm
       PUBLISH_HOUR: "22"
@@ -75,4 +75,5 @@ jobs:
 
       - name: No article ready
         if: steps.publish.outputs.published != 'true'
-        run: echo "No ready due article was published. Reason: ${{ steps.publish.outputs.reason }}"
+        run: |
+          echo "No ready due article was published. Reason: ${{ steps.publish.outputs.reason }}"
