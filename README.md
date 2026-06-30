@@ -211,3 +211,9 @@ The first version uses code-native grayscale UI graphics instead of generic stoc
 ### Deploying
 
 Deploy to Vercel, set `NEXT_PUBLIC_SITE_URL`, and connect production provider credentials when ready.
+
+### Editorial Publishing
+
+Daily article publishing is sheet-driven. Write and approve articles in the Google Sheet, mark approved rows as `ready`, and the `Publish Scheduled Article` GitHub Action publishes one due article at 22:00 Europe/Stockholm.
+
+Setup details live in `docs/editorial-publishing.md`.

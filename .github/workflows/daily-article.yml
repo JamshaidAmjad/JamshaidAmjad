@@ -1,9 +1,17 @@
-name: Publish Daily AI Article
+name: Publish Scheduled Article
 
 on:
   schedule:
-    - cron: "0 7 * * *" # every day at 07:00 UTC
-  workflow_dispatch: {}
+    # Runs at 20:00 and 21:00 UTC. The script publishes only when the
+    # local Europe/Stockholm hour is 22, so daylight saving time is handled.
+    - cron: "0 20,21 * * *"
+  workflow_dispatch:
+    inputs:
+      force_publish:
+        description: "Publish the next ready article now, ignoring the 22:00 Stockholm time gate."
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -11,7 +19,17 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
+    env:
+      EDITORIAL_SHEET_CSV_URL: ${{ vars.EDITORIAL_SHEET_CSV_URL || secrets.EDITORIAL_SHEET_CSV_URL }}
+      FORCE_PUBLISH: ${{ inputs.force_publish || 'false' }}
+      NEXT_PUBLIC_SITE_URL: https://jamshaidamjad.com
+      PUBLISH_TIME_ZONE: Europe/Stockholm
+      PUBLISH_HOUR: "22"
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,26 +37,42 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate article
-        id: generate
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node scripts/generate-daily-article.mjs
+      - name: Publish next ready article from editorial sheet
+        id: publish
+        run: node scripts/publish-scheduled-article.mjs
 
-      - name: Build site to verify the new article is valid
+      - name: Build site to verify the article
+        if: steps.publish.outputs.published == 'true'
         run: npm run build
 
-      - name: Commit and push the new article
+      - name: Commit and push article
+        if: steps.publish.outputs.published == 'true'
         env:
-          ARTICLE_TITLE: ${{ steps.generate.outputs.title }}
+          ARTICLE_TITLE: ${{ steps.publish.outputs.title }}
         run: |
           git config user.name "jimzzz-bot"
           git config user.email "automation@jamshaidamjad.com"
           git add src/content/articles
-          git commit -m "chore: publish daily AI article - $ARTICLE_TITLE"
+          git commit -m "chore: publish scheduled article - $ARTICLE_TITLE"
           git push origin main
+
+      - name: Deploy to Vercel
+        if: steps.publish.outputs.published == 'true'
+        run: |
+          test -n "$VERCEL_TOKEN"
+          test -n "$VERCEL_ORG_ID"
+          test -n "$VERCEL_PROJECT_ID"
+          mkdir -p .vercel
+          printf '{"orgId":"%s","projectId":"%s"}' "$VERCEL_ORG_ID" "$VERCEL_PROJECT_ID" > .vercel/project.json
+          npx vercel@latest pull --yes --environment=production --token="$VERCEL_TOKEN"
+          npx vercel@latest build --prod --token="$VERCEL_TOKEN"
+          npx vercel@latest deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+
+      - name: No article ready
+        if: steps.publish.outputs.published != 'true'
+        run: echo "No ready due article was published. Reason: ${{ steps.publish.outputs.reason }}"
