@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export:editorial": "python3 scripts/export-local-editorial-sheet.py /tmp/jamshaid-editorial-sheet/jamshaid-amjad-editorial-calendar.xlsx content/editorial/articles.csv",
+    "publish:scheduled-article": "node scripts/publish-scheduled-article.mjs",
     "start": "next start",
     "lint": "python3 scripts/lint.py",
     "typecheck": "tsc --noEmit --pretty false --incremental false"
