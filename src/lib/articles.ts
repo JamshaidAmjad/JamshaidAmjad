@@ -96,10 +96,25 @@ function escapeHtml(value: string) {
     .replaceAll(">", "&gt;");
 }
 
+function escapeAttribute(value: string) {
+  return escapeHtml(value).replaceAll('"', "&quot;");
+}
+
+function isSafeHref(value: string) {
+  return value.startsWith("/") || value.startsWith("https://") || value.startsWith("http://");
+}
+
 function inlineMarkdown(value: string) {
   return escapeHtml(value)
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/`([^`]+)`/g, "<code>$1</code>");
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_match, label: string, href: string) => {
+      if (!isSafeHref(href)) {
+        return label;
+      }
+
+      return `<a href="${escapeAttribute(href)}">${label}</a>`;
+    });
 }
 
 export function markdownToHtml(markdown: string) {
