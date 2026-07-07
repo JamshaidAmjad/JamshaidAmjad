@@ -18,7 +18,7 @@ This is a rolling 90-day roadmap for one article per Europe/Stockholm calendar d
 | 1 | published | Turning AI Study Notes Into Real Products | Personal Brand | How AI learning becomes shipped work | Newsletter |
 | 2 | published | The First AI Workflow I Would Build For A Small Business | AI Automation | Practical first AI automation project | Book a session |
 | 3 | published | AI Opportunity Mapping: A Simple Workshop For Founders | AI Project Leadership | How to find useful AI projects | AI Opportunity Audit |
-| 4 | planned | Why Most AI Demos Do Not Become Business Value | Business with AI | Avoiding demo traps | Work With Me |
+| 4 | published | Why Most AI Demos Do Not Become Business Value | Business with AI | Avoiding demo traps | Work With Me |
 | 5 | planned | How To Decide If A Workflow Is Worth Automating | AI Automation | Automation decision framework | Book a session |
 | 6 | planned | What LTU Pattern Recognition Taught Me About Business Signals | Applied AI Learning | Pattern recognition in business | Newsletter |
 | 7 | planned | N8N, Claude, And Codex: My Practical AI Automation Stack | AI Automation | Tools for AI workflow automation | AI Automation Sprint |
