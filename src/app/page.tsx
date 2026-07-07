@@ -11,7 +11,7 @@ import { NewsletterSignup } from "@/components/forms/newsletter-signup";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { projects, services } from "@/data/site";
+import { credibilityStats, profileProofPoints, projects, services } from "@/data/site";
 import { getAllArticles } from "@/lib/articles";
 import { createMetadata } from "@/lib/metadata";
 
@@ -41,6 +41,51 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <HomeIntro />
+      <section className="py-16 sm:py-20">
+        <Container>
+          <Reveal>
+            <div className="grid gap-8 rounded-2xl border border-zinc-200 bg-white p-7 dark:border-white/10 dark:bg-white/[0.03] lg:grid-cols-[0.9fr_1.1fr] lg:p-9">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
+                  Profile proof
+                </span>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-white">
+                  Built from real delivery, not just a personal brand story.
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+                  The work behind this site spans MVPs, websites, SEO, automations, data
+                  interfaces, and product support for organizations across multiple markets.
+                </p>
+              </div>
+              <div>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {credibilityStats.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-white/10 dark:bg-zinc-950/60"
+                    >
+                      <p className="font-display text-4xl italic text-zinc-950 dark:text-white">
+                        {stat.value}
+                      </p>
+                      <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <ul className="mt-6 grid gap-3 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+                  {profileProofPoints.slice(0, 3).map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span className="mt-3 size-1.5 shrink-0 rounded-full bg-zinc-950 dark:bg-white" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
       <section className="py-20 sm:py-24">
         <Container>
           <Reveal>

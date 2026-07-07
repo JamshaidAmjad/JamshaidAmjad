@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { Tag } from "@/components/ui/tag";
 import { cn } from "@/lib/utils";
 
@@ -8,7 +10,7 @@ export function SectionHeading({
   className,
 }: {
   eyebrow?: string;
-  title: React.ReactNode;
+  title: ReactNode;
   description?: string;
   className?: string;
 }) {

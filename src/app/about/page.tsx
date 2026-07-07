@@ -7,6 +7,7 @@ import { Accent } from "@/components/ui/accent";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { credibilityStats, profileProofPoints } from "@/data/site";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
@@ -109,6 +110,55 @@ export default function AboutPage() {
             </div>
           </Reveal>
         </div>
+      </Container>
+      <Container className="pb-20 sm:pb-24">
+        <Reveal>
+          <section className="rounded-2xl border border-zinc-200 bg-white p-7 dark:border-white/10 dark:bg-white/[0.03] lg:p-9">
+            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
+                  Credibility
+                </span>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-950 dark:text-white">
+                  A practical builder profile shaped by client delivery.
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+                  The strongest signal from Jamshaid&apos;s profile is not one single job title.
+                  It is a repeated pattern: understand the business need, shape the experience,
+                  build the system, and keep improving it after launch.
+                </p>
+              </div>
+              <div>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {credibilityStats.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-white/10 dark:bg-zinc-950/60"
+                    >
+                      <p className="font-display text-4xl italic text-zinc-950 dark:text-white">
+                        {stat.value}
+                      </p>
+                      <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">
+                        {stat.label}
+                      </p>
+                      <p className="mt-3 text-xs leading-6 text-zinc-500 dark:text-zinc-400">
+                        {stat.detail}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <ul className="mt-7 grid gap-3 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+                  {profileProofPoints.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span className="mt-3 size-1.5 shrink-0 rounded-full bg-zinc-950 dark:bg-white" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+        </Reveal>
       </Container>
       <Container className="pb-20 sm:pb-24">
         <Reveal>

@@ -67,6 +67,31 @@ export const projects = [
   },
 ];
 
+export const credibilityStats = [
+  {
+    value: "18+",
+    label: "organizations and client contexts",
+    detail: "Named roles across software delivery, web development, SEO, consulting, and product support.",
+  },
+  {
+    value: "8",
+    label: "countries represented in client work",
+    detail: "Experience connected to Sweden, the USA, Germany, Austria, Denmark, Canada, Pakistan, and Turkey.",
+  },
+  {
+    value: "3",
+    label: "core delivery lanes",
+    detail: "MVPs and websites, AI and automation workflows, and ongoing product support.",
+  },
+];
+
+export const profileProofPoints = [
+  "Founder of Codexier AB, building websites, digital systems, automations, and AI-assisted workflows for business clients.",
+  "Project and consulting experience with organizations including Latinos LEAD, myGermany GmbH, CodeHero ApS, Studio JoGarts MEDIAS, eSportsBASE GmbH, Focus Media LLC, and Danish service businesses.",
+  "Practical technical base across machine learning, data science, Python, WordPress, UX/UI, SEO, API integrations, and searchable data interfaces.",
+  "Additional credibility from Salesforce administration, UX interaction design, software engineering education, and a Master's path in Applied AI.",
+];
+
 export const services = [
   {
     title: "1:1 AI & Business Strategy Session",
