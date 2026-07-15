@@ -22,7 +22,7 @@ This is a rolling 90-day roadmap for one article per Europe/Stockholm calendar d
 | 5 | published | How To Decide If A Workflow Is Worth Automating | AI Automation | Automation decision framework | Book a session |
 | 6 | published | What LTU Pattern Recognition Taught Me About Business Signals | Applied AI Learning | Pattern recognition in business | Newsletter |
 | 7 | published | N8N, Claude, And Codex: My Practical AI Automation Stack | AI Automation | Tools for AI workflow automation | AI Automation Sprint |
-| 8 | planned | The Difference Between An AI Tool And An AI System | Business with AI | Tool vs system decision-making | Work With Me |
+| 8 | published | The Difference Between An AI Tool And An AI System | Business with AI | Tool vs system decision-making | Work With Me |
 | 9 | planned | How I Scope An AI Automation Sprint | AI Project Leadership | AI sprint planning | AI Automation Sprint |
 | 10 | planned | Why Human Approval Still Matters In AI Content Workflows | Responsible AI | Safe AI content automation | Book a session |
 | 11 | planned | Neural Networks Explained For Business Operators | Applied AI Learning | Simple neural network explanation | Newsletter |
