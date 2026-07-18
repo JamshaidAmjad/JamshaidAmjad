@@ -4,6 +4,7 @@ Custom skills for designing and developing web and mobile applications:
 
 | Skill | Purpose |
 |---|---|
+| `prompt-refiner` | **The primary skill.** Runs first on every message: turns raw/dictated/story-like prompts into a precise brief, routes to the right skill, keeps prompts token-lean, and enforces short essentials-only reporting |
 | `team-orchestrator` | **The master skill.** Takes any instruction, interprets it like a delivery director, and dispatches it across a 25-role virtual agency (requirements, PM, architecture, design, web, mobile, QA, security, SEO, content, growth) with quality gates and a short executive report |
 | `web-app-design` | Visual/UX design for web apps: layout, typography, color, responsive, accessibility |
 | `web-app-development` | Building web apps: Next.js App Router, React, TypeScript, Tailwind conventions |
