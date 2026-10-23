@@ -16,8 +16,8 @@ Editorial monochrome cover for an AI learning article, abstract model graph, cle
 
 ## Project Graphics
 
-Monochrome product system visual for Codexier AB or Forare, dashboards, route logic, workflow nodes, precise interface details, no stock vehicles or generic city blur.
+Monochrome product system visual for Codexier or Forare, dashboards, route logic, workflow nodes, precise interface details, no stock vehicles or generic city blur.
 
 ## Open Graph
 
-Premium black-and-white social card for Jamshaid Amjad, AI student founder operator, large readable name, subtle interface grid, Codexier AB and Forare labels, 1200x630.
+Premium black-and-white social card for Jamshaid Amjad, AI student founder operator, large readable name, subtle interface grid, Codexier and Forare labels, 1200x630.

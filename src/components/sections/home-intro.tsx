@@ -15,7 +15,7 @@ export function HomeIntro() {
           <div>
             <Tag>About me</Tag>
             <p className="mt-6 text-2xl font-medium leading-relaxed tracking-tight text-zinc-950 sm:text-3xl sm:leading-relaxed dark:text-white">
-              I&apos;m a master&apos;s student in Applied AI and the founder of Codexier AB.
+              I&apos;m a master&apos;s student in Applied AI and the founder of Codexier.
               I{" "}
               <span className="font-display font-normal italic">learn in public</span> —
               turning lectures into articles, articles into products, and products into

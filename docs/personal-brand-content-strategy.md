@@ -13,7 +13,7 @@ The core content promise:
 This is stronger than a generic "AI consultant" message because it combines:
 
 - LTU Applied AI coursework and 60 ECTS completed.
-- Codexier AB founder/operator experience.
+- Codexier founder/operator experience.
 - 6+ years of digital transformation and client delivery.
 - Hands-on automation with N8N, Claude, Codex, APIs, Vercel, Supabase, WordPress, Salesforce, React, and TypeScript.
 - Project leadership, stakeholder management, workshop facilitation, KPI thinking, and change delivery.
@@ -80,7 +80,7 @@ Secondary audiences:
    - Examples: workshops, KPI tracking, risk mapping, stakeholder alignment, change management.
 
 4. Founder And Consultant Notes
-   - Share lessons from Codexier AB, freelance delivery, and building public assets.
+   - Share lessons from Codexier, freelance delivery, and building public assets.
    - Examples: trust, scoping, handover, production readiness, client communication.
 
 5. AI Product And Platform Building

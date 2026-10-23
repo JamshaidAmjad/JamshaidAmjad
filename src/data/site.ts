@@ -6,17 +6,17 @@ export const siteConfig = {
     "Jamshaid Amjad is an entrepreneur, AI student, and software builder creating practical digital systems, AI-powered tools, and business platforms from Sweden.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://jamshaidamjad.com",
   email: "hello@jamshaidamjad.com",
-  location: "Sweden",
+  location: "Stockholm, Sweden",
   author: {
     name: "Jamshaid Amjad",
     role: "Founder/operator, AI student, and software builder",
-    bio: "Jamshaid writes as he learns and builds: Applied AI, Codexier AB, Forare, automation, and practical digital systems.",
+    bio: "Jamshaid writes as he learns and builds: Applied AI, Codexier, AI Receptionist, Bordly, Förare, automation, and practical digital systems.",
   },
   keywords: [
     "Jamshaid Amjad",
     "Jimzzz",
-    "Codexier AB",
-    "Forare",
+    "Codexier",
+    "Förare",
     "AI learning",
     "Applied AI",
     "software builder",
@@ -36,60 +36,62 @@ export const navItems = [
 
 export const projects = [
   {
-    title: "Codexier AB",
+    title: "Codexier",
     slug: "codexier",
     icon: "terminal",
+    status: "Services available",
     description:
-      "A Sweden-based software and AI services company for websites, automations, AI systems, dashboards, APIs, and digital product delivery.",
-    tags: ["Software", "AI systems", "Automation"],
-    href: "/work-with-me",
-    cta: "Build with Codexier",
+      "My software studio: websites, web apps, mobile apps, integrations and AI automation for businesses. Scope is agreed before delivery begins.",
+    tags: ["Software delivery", "Web & mobile", "Automation"],
+    href: "https://codexier.com",
+    cta: "Explore Codexier services",
   },
   {
-    title: "Forare",
+    title: "AI Receptionist",
+    slug: "ai-receptionist",
+    icon: "message",
+    status: "Product · demo available",
+    description:
+      "A Codexier product for service businesses: AI phone answering in Swedish and English, with booking integrations and call summaries. Explore the product and discuss your setup.",
+    tags: ["Voice AI", "Service businesses", "Bookings"],
+    href: "https://codexier.com/ai-receptionist",
+    cta: "Explore AI Receptionist",
+  },
+  {
+    title: "Bordly",
+    slug: "bordly",
+    icon: "network",
+    status: "Product · free trial available",
+    description:
+      "Digital stamp cards, menus, Wi-Fi information and guest feedback for cafés and restaurants. Guests open the venue page through an NFC or QR tag, without downloading an app.",
+    tags: ["Hospitality", "Loyalty", "NFC & QR"],
+    href: "https://bordly.codexier.com",
+    cta: "Explore Bordly",
+  },
+  {
+    title: "Förare",
     slug: "forare",
     icon: "route",
+    status: "Platform · public booking site",
     description:
-      "A mobility platform concept for drivers, ride-hailing, logistics, onboarding, dispatch, and AI-assisted transport operations.",
-    tags: ["Mobility", "Platform", "Dispatch"],
-    href: "/projects#forare",
-    cta: "Explore the vision",
-  },
-  {
-    title: "AI Learning Hub",
-    slug: "ai-learning-hub",
-    icon: "network",
-    description:
-      "A public knowledge base turning Applied AI study into notes, articles, explainers, experiments, and product ideas.",
-    tags: ["AI", "Learning", "Research"],
-    href: "/ai-articles",
-    cta: "Read the notes",
+      "A transport platform focused on Stockholm Arlanda airport transfers, with a public booking website and ongoing web and mobile product development.",
+    tags: ["Airport transfers", "Mobility", "Web & mobile"],
+    href: "https://forare.eu",
+    cta: "Visit Förare",
   },
 ];
 
 export const credibilityStats = [
-  {
-    value: "18+",
-    label: "organizations and client contexts",
-    detail: "Named roles across software delivery, web development, SEO, consulting, and product support.",
-  },
-  {
-    value: "8",
-    label: "countries represented in client work",
-    detail: "Experience connected to Sweden, the USA, Germany, Austria, Denmark, Canada, Pakistan, and Turkey.",
-  },
-  {
-    value: "3",
-    label: "core delivery lanes",
-    detail: "MVPs and websites, AI and automation workflows, and ongoing product support.",
-  },
+  { value: "Build", label: "Web & mobile", detail: "Websites, apps and practical business software through Codexier." },
+  { value: "Connect", label: "AI & automation", detail: "Voice interfaces, integrations and workflows built around business needs." },
+  { value: "Learn", label: "Applied AI", detail: "Master’s study at Luleå University of Technology, alongside product development." },
 ];
 
 export const profileProofPoints = [
-  "Founder of Codexier AB, building websites, digital systems, automations, and AI-assisted workflows for business clients.",
-  "Project and consulting experience with organizations including Latinos LEAD, myGermany GmbH, CodeHero ApS, Studio JoGarts MEDIAS, eSportsBASE GmbH, Focus Media LLC, and Danish service businesses.",
-  "Practical technical base across machine learning, data science, Python, WordPress, UX/UI, SEO, API integrations, and searchable data interfaces.",
-  "Additional credibility from Salesforce administration, UX interaction design, software engineering education, and a Master's path in Applied AI.",
+  "Founder of Codexier, operating as Jamshaid Amjad, sole trader (enskild firma) in Stockholm, Sweden.",
+  "Building AI Receptionist, Bordly and Förare alongside client software and automation work.",
+  "Full-stack development across TypeScript, React, Next.js, Supabase and mobile apps.",
+  "Studying a master’s in Applied AI at Luleå University of Technology.",
 ];
 
 export const services = [
@@ -122,7 +124,7 @@ export const services = [
     description:
       "End-to-end delivery for websites, web apps, dashboards, APIs, integrations, automations, and AI-assisted workflows.",
     bestFor:
-      "Companies that want execution from idea to production through Codexier AB.",
+      "Companies that want execution from idea to production through Codexier.",
     href: "/contact",
     cta: "Start a project",
   },
@@ -155,9 +157,10 @@ export const nowSections = [
     title: "Currently building",
     icon: "terminal",
     items: [
-      "Codexier AB",
-      "Forare",
-      "Personal brand website",
+      "Codexier",
+      "Förare",
+      "AI Receptionist",
+      "Bordly",
       "AI learning hub",
       "Automation systems",
     ],

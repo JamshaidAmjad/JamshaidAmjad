@@ -13,7 +13,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "About",
   description:
-    "About Jamshaid Amjad, Jimzzz: AI student, entrepreneur, founder of Codexier AB, and builder of Forare.",
+    "About Jamshaid Amjad, Jimzzz: AI student, entrepreneur, founder of Codexier, and builder of Förare.",
   path: "/about",
 });
 
@@ -26,22 +26,22 @@ const timeline = [
   },
   {
     year: "Codexier",
-    title: "Founder of Codexier AB",
+    title: "Founder of Codexier",
     description:
       "Creating a software and AI services company focused on useful systems, automation, and digital delivery.",
   },
   {
-    year: "Forare",
-    title: "Building a mobility platform vision",
+    year: "Förare",
+    title: "Building Förare",
     description:
-      "Exploring driver onboarding, transport operations, intelligent dispatch, and AI-assisted mobility workflows.",
+      "Developing a transport platform with a public Arlanda airport-transfer booking site and ongoing web and mobile work.",
   },
 ];
 
 const facts = [
   { icon: GraduationCap, label: "MSc Applied AI student" },
-  { icon: Terminal, label: "Founder of Codexier AB & Forare" },
-  { icon: MapPin, label: "Based in Sweden" },
+  { icon: Terminal, label: "Founder of Codexier · AI Receptionist · Bordly · Förare" },
+  { icon: MapPin, label: "Based in Stockholm, Sweden" },
 ];
 
 export default function AboutPage() {
@@ -79,8 +79,8 @@ export default function AboutPage() {
                   Jamshaid Amjad <span className="text-zinc-400 dark:text-zinc-500">/ Jimzzz</span>
                 </h2>
                 <p className="mt-3 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
-                  I&apos;m building around Applied AI, Codexier AB, Forare, automation, and
-                  practical digital systems. This site is my complete funnel: learn with me,
+                  I&apos;m building around Applied AI, Codexier, AI Receptionist, Bordly, Förare, automation, and
+                  practical digital systems. Here you can learn with me,
                   explore my projects, book a session, subscribe, or just say hi.
                 </p>
                 <ul className="mt-5 space-y-3">
