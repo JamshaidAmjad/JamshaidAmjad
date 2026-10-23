@@ -55,9 +55,8 @@ export default function ProjectsPage() {
               </div>
               <p className="mt-5 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
                 Alongside these products, I publish practical Applied AI learning notes.
-                The projects above link to their current public sites; product availability
-                and supported features are described there, without implying customer numbers
-                or completed mobile releases here.
+                Read the notes behind the work, or explore each product’s website for its
+                current features and availability.
               </p>
               <a href="/ai-articles" className="mt-5 inline-block text-sm font-semibold underline underline-offset-4">Read my AI learning notes →</a>
             </div>
