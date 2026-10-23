@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
   title: "Newsletter",
-  description: "Subscribe for AI learning notes, founder updates, Codexier AB, and Forare progress.",
+  description: "Subscribe for AI learning notes, founder updates, Codexier, and Forare progress.",
   path: "/newsletter",
 });
 

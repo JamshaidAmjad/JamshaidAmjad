@@ -11,7 +11,7 @@ import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
   title: "Work With Me",
-  description: "Book AI strategy, software consultation, or Codexier AB delivery with Jamshaid Amjad.",
+  description: "Book AI strategy, software consultation, or Codexier delivery with Jamshaid Amjad.",
   path: "/work-with-me",
 });
 
@@ -29,7 +29,7 @@ const steps = [
   {
     icon: Wrench,
     title: "Build it",
-    description: "Act on the plan yourself, or let Codexier AB take it from idea to production.",
+    description: "Act on the plan yourself, or let Codexier take it from idea to production.",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function WorkWithMePage() {
             How we can <Accent>work together</Accent>.
           </>
         }
-        description="A focused session for clarity, a consultation for deeper technical direction, or Codexier AB for end-to-end delivery."
+        description="A focused session for clarity, a consultation for deeper technical direction, or Codexier for end-to-end delivery."
       />
       <Container className="py-16 sm:py-20">
         <Reveal>

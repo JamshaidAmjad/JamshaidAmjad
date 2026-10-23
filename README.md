@@ -24,7 +24,7 @@ Building intelligent software, AI systems, and founder-led products.
 
 Entrepreneur, Applied AI student, and software builder. I work across practical AI systems, automation, web products, and business platforms.
 
-Currently building **Codexier AB**, developing the **Forare** mobility platform, and writing in public about AI, software, and entrepreneurship.
+Currently building **Codexier**, developing the **Forare** mobility platform, and writing in public about AI, software, and entrepreneurship.
 
 ```
 Location        Sweden — building globally

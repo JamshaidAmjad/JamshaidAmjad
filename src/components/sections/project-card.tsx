@@ -10,6 +10,7 @@ export function ProjectCard({
 }: {
   project: {
     title: string;
+    status: string;
     icon: string;
     description: string;
     tags: string[];
@@ -30,6 +31,7 @@ export function ProjectCard({
           </span>
         ) : null}
       </div>
+      <p className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-500">{project.status}</p>
       <h3 className="text-xl font-semibold text-zinc-950 dark:text-white">{project.title}</h3>
       <p className="mt-3 text-sm leading-7 text-zinc-600 dark:text-zinc-400">{project.description}</p>
       <div className="mt-5 flex flex-wrap gap-2">

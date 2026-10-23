@@ -8,8 +8,10 @@ import { Reveal } from "@/components/ui/reveal";
 
 const marqueeItems = [
   "Applied AI",
-  "Codexier AB",
-  "Forare",
+  "Codexier",
+  "AI Receptionist",
+  "Bordly",
+  "Förare",
   "Automation",
   "Neural Networks",
   "Transformers",
@@ -18,9 +20,9 @@ const marqueeItems = [
 ];
 
 const stats = [
-  { value: "2+", label: "Ventures founded" },
-  { value: "MSc", label: "Applied AI" },
-  { value: "100%", label: "Builder mindset" },
+  { value: "Web", label: "Product engineering" },
+  { value: "AI", label: "Applied AI student" },
+  { value: "Mobile", label: "App development" },
 ];
 
 export function HeroSection() {
@@ -56,9 +58,9 @@ export function HeroSection() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-              Entrepreneur, Applied AI master&apos;s student, and founder of Codexier AB —
-              turning everything I learn about AI into practical products, automation,
-              and ventures like Forare.
+              Entrepreneur, Applied AI master&apos;s student, and founder of Codexier —
+              building business software and automation in Stockholm. My current work
+              includes AI Receptionist, Bordly and Förare.
             </p>
           </Reveal>
           <Reveal delay={0.24}>
@@ -67,8 +69,8 @@ export function HeroSection() {
                 Explore my work
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </ButtonLink>
-              <ButtonLink href="/book" variant="secondary" className="px-6">
-                Book a session
+              <ButtonLink href="/contact" variant="secondary" className="px-6">
+                Discuss a project
               </ButtonLink>
             </div>
           </Reveal>

@@ -70,7 +70,7 @@ export function ArticleLayout({
               Written by Jamshaid Amjad
             </h2>
             <p className="mt-2 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
-              AI student, founder of Codexier AB, and builder of Forare. I document practical
+              AI student, founder of Codexier, and builder of Förare. I document practical
               AI learning and founder decisions in public.
             </p>
           </div>

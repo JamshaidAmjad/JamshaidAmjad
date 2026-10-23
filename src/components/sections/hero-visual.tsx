@@ -42,7 +42,7 @@ export function HeroVisual() {
             Founder
           </span>
           <span className="block text-sm font-semibold text-zinc-950 dark:text-white">
-            Codexier AB
+            Codexier
           </span>
         </span>
       </div>

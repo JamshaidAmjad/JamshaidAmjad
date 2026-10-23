@@ -18,7 +18,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "Jamshaid Amjad | Jimzzz",
   description:
-    "AI learning, entrepreneurship, Codexier AB, Forare, articles, services, booking, newsletter, and contact.",
+    "AI learning, entrepreneurship, Codexier, AI Receptionist, Bordly, Förare, articles, services, booking, newsletter, and contact.",
   path: "/",
 });
 
@@ -98,7 +98,7 @@ export default function HomePage() {
                     <span className="font-display font-normal italic">building</span>.
                   </>
                 }
-                description="Codexier AB, Forare, and the AI Learning Hub — three clear paths into my work as a founder and builder."
+                description="Codexier services, AI Receptionist, Bordly and Förare — explore the products and software I’m building."
               />
               <ViewAllLink href="/projects" label="View all projects" />
             </div>
@@ -182,7 +182,7 @@ export default function HomePage() {
                     <span className="font-display font-normal italic">build notes</span>.
                   </>
                 }
-                description="Practical AI learning, founder notes, and Codexier/Forare updates — straight to your inbox. No noise."
+                description="Practical AI learning, founder notes, and product updates — straight to your inbox. No noise."
               />
               <div className="mt-8 text-left">
                 <NewsletterSignup />

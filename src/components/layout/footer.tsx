@@ -15,7 +15,7 @@ export function Footer() {
           <BrandMark />
           <p className="mt-5 max-w-md text-sm leading-7 text-zinc-600 dark:text-zinc-400">
             I build <span className="font-display italic">intelligent</span> software &amp;
-            companies — AI learning notes, Codexier AB, Forare, services, and practical
+            products — Codexier, AI Receptionist, Bordly, Förare, and practical
             founder updates.
           </p>
           <p className="mt-5 inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">

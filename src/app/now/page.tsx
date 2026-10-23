@@ -29,7 +29,7 @@ export default function NowPage() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
             <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
           </span>
-          Live status
+          Updated 23 October 2026
         </span>
       </PageHeader>
       <Container className="py-16 sm:py-20">

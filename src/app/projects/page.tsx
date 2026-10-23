@@ -11,7 +11,7 @@ import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
   title: "Projects",
-  description: "Explore Codexier AB, Forare, and Jamshaid Amjad's AI Learning Hub.",
+  description: "Explore Codexier services, AI Receptionist, Bordly and Förare — current work by Jamshaid Amjad.",
   path: "/projects",
 });
 
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
       />
       <Container className="py-16 sm:py-20">
         <Reveal>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {projects.map((project, index) => (
               <ProjectCard key={project.slug} project={project} index={index} />
             ))}
@@ -50,14 +50,16 @@ export default function ProjectsPage() {
                   <Route className="size-5" strokeWidth={1.8} />
                 </span>
                 <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-white">
-                  The <Accent>Forare</Accent> vision
+                  From <Accent>learning</Accent> to building
                 </h2>
               </div>
               <p className="mt-5 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
-                Forare is positioned as a future mobility and driver platform concept for
-                ride-hailing, logistics, driver onboarding, route intelligence, fleet
-                coordination, and AI-assisted operations.
+                Alongside these products, I publish practical Applied AI learning notes.
+                The projects above link to their current public sites; product availability
+                and supported features are described there, without implying customer numbers
+                or completed mobile releases here.
               </p>
+              <a href="/ai-articles" className="mt-5 inline-block text-sm font-semibold underline underline-offset-4">Read my AI learning notes →</a>
             </div>
           </section>
         </Reveal>

@@ -29,12 +29,12 @@ export default function Image() {
         <div>
           <div style={{ fontSize: 82, fontWeight: 700, letterSpacing: -2 }}>{siteConfig.name}</div>
           <div style={{ marginTop: 24, fontSize: 34, color: "#d4d4d8" }}>
-            Practical AI learning, Codexier AB, Forare, and software systems.
+            Practical AI learning, Codexier, AI Receptionist, Bordly, Förare, and software systems.
           </div>
         </div>
         <div style={{ display: "flex", gap: 18, fontSize: 24, color: "#a1a1aa" }}>
           <span>Jimzzz</span>
-          <span>Codexier AB</span>
+          <span>Codexier</span>
           <span>Forare</span>
         </div>
       </div>
