@@ -32,16 +32,16 @@ const timeline = [
   },
   {
     year: "Förare",
-    title: "Building a mobility platform vision",
+    title: "Building Förare",
     description:
-      "Exploring driver onboarding, transport operations, intelligent dispatch, and AI-assisted mobility workflows.",
+      "Developing a transport platform with a public Arlanda airport-transfer booking site and ongoing web and mobile work.",
   },
 ];
 
 const facts = [
   { icon: GraduationCap, label: "MSc Applied AI student" },
   { icon: Terminal, label: "Founder of Codexier · AI Receptionist · Bordly · Förare" },
-  { icon: MapPin, label: "Based in Sweden" },
+  { icon: MapPin, label: "Based in Stockholm, Sweden" },
 ];
 
 export default function AboutPage() {
@@ -80,7 +80,7 @@ export default function AboutPage() {
                 </h2>
                 <p className="mt-3 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
                   I&apos;m building around Applied AI, Codexier, AI Receptionist, Bordly, Förare, automation, and
-                  practical digital systems. This site is my complete funnel: learn with me,
+                  practical digital systems. Here you can learn with me,
                   explore my projects, book a session, subscribe, or just say hi.
                 </p>
                 <ul className="mt-5 space-y-3">
